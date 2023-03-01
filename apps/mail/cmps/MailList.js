@@ -4,7 +4,7 @@ import mailPreview from "./MailPreview.js";
 export default {
   props: ["mails"],
   template: `
-  <ul>
+  <ul class="main-list">
      <li v-for="mail in mails" :key="mail.id">
         <mailPreview :mail="mail"/>
      </li>
