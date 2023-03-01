@@ -10,7 +10,7 @@ export default {
           <button @click="handleAddMail">Add Mail</button>
           <MailList :mails="mails"/>
         </section>
-        <MailAdd @create="createMail" v-if="isOpen"  />
+        <MailAdd class="modal" @create="createMail" v-if="isOpen"  />
   `,
 
   data() {
