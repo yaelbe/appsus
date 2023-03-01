@@ -1,29 +1,23 @@
 .mail-preview{
     display: grid;
-    grid-template-columns: 
-    minmax(20px,1fr)
-    minmax(100px,1fr)
-    minmax(auto-fit,900px)
-    minmax(20px,1fr)
-    ;
-    
-}
-
-.mail-preview :hover{
-    box-shadow: -1px 1px 5px 0px #000000;
-}
-
-.mail-preview p{
-    grid-column: 3;
-    text-align: start;
-    white-space: nowrap;
-}
-
-.mail-preview h3{
-    width:250px;
+    grid-template-columns: 30px 12rem 1fr 50px
 }
 
 .mail-preview h1{
-    width:50px;
+grid-column: 1;
+}
+
+.mail-preview h3{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    grid-column: 2;
+}
+
+ .main-list li{
+padding: 1.5em;
+}
+.main-list li:hover{ 
+    box-shadow: 0px 0px 5px 6px rgb(0 0 0 / 12%);
 }
 
