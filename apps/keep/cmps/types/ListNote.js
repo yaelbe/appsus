@@ -10,9 +10,7 @@ export default {
         </ul>
     </section>
     `,
-  created() {
-    console.log('create List Note')
-  },
+  created() {},
   data() {
     return {}
   },
