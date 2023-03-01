@@ -1,0 +1,126 @@
+[
+  {
+    "id": "n101",
+    "type": "note-txt",
+    "isPinned": true,
+    "info": {
+      "txt": "Just Do It!💫"
+    },
+    "style": {
+      "backgroundColor": "#aecbfa"
+    }
+  },
+  {
+    "id": "n102",
+    "type": "note-img",
+    "info": {
+      "url": "https://www.wordsonimages.com/pics/102687-o.jpg",
+      "title": "Remember"
+    },
+    "style": {
+      "backgroundColor": "#fff"
+    }
+  },
+  {
+    "id": "n103",
+    "type": "note-img",
+    "isPinned": true,
+    "info": {
+      "url": "/assets/img/sample.png",
+      "title": "My Love"
+    },
+    "style": {
+      "backgroundColor": "#fdcfe8"
+    }
+  },
+  {
+    "id": "n104",
+    "type": "note-todos",
+    "info": {
+      "label": "Get my stuff together",
+      "todos": [
+        { "txt": "Sprint work", "doneAt": null },
+        { "txt": "Return to Shein", "doneAt": 187111111 }
+      ]
+    },
+    "style": {
+      "backgroundColor": "#fff"
+    }
+  },
+  {
+    "id": "n105",
+    "type": "note-todos",
+    "info": {
+      "label": "House missions",
+      "todos": [
+        { "txt": "Wash the car", "doneAt": null },
+        { "txt": "Fix the sink", "doneAt": null },
+        { "txt": "Call Michael P.", "doneAt": null }
+      ]
+    },
+    "style": {
+      "backgroundColor": "#ccff90"
+    }
+  },
+  {
+    "id": "n106",
+    "type": "note-video",
+    "info": {
+      "txt": "Unicorn",
+      "url": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/B7vuaEv1b24\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
+    },
+    "style": {
+      "backgroundColor": "#fff"
+    }
+  },
+  {
+    "id": "n107",
+    "type": "note-img",
+    "info": {
+      "url": "/assets/img/bike.jpeg",
+      "title": "My Bike"
+    },
+    "style": {
+      "backgroundColor": "#fff"
+    }
+  },
+  {
+    "id": "n108",
+    "type": "note-txt",
+    "isPinned": true,
+    "info": {
+      "txt": "Surprise party for my man!"
+    },
+    "style": {
+      "backgroundColor": "#fff"
+    }
+  },
+  {
+    "id": "n109",
+    "type": "note-todos",
+    "isPinned": true,
+    "info": {
+      "label": "Grocery List",
+      "todos": [
+        { "txt": "Milk", "doneAt": null },
+        { "txt": "Bread", "doneAt": null },
+        { "txt": "Yogurt", "doneAt": null },
+        { "txt": "Chocolate", "doneAt": null }
+      ]
+    },
+    "style": {
+      "backgroundColor": "#fff"
+    }
+  },
+  {
+    "id": "n110",
+    "type": "note-img",
+    "info": {
+      "url": "https://i.pinimg.com/originals/1d/66/f2/1d66f2f91cbb28324fab2627dc123e18.jpg",
+      "title": "Pooh"
+    },
+    "style": {
+      "backgroundColor": "#fff"
+    }
+  }
+]
