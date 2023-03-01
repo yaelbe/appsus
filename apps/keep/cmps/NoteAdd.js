@@ -1,8 +1,8 @@
 export default {
   props: [],
   template: `
-    <form class="add-note" @submit.prevent="add">
-      <input ref="text" type="text" v-model="txt"  class="note-txt" placeholder="What's on your mind..." />
+    <form class="add-note">
+      <input type="text" v-model="txt"  class="note-txt" placeholder="What's on your mind..." />
         <nav class="add-type">
             <button class="type-btn" @click.prevent="txtNote"><i class="fa-regular fa-comment"></i></button>
             <button class="type-btn" @click.prevent="imgNote"><i class="fa-regular fa-image"></i></button>
@@ -39,5 +39,5 @@ export default {
   computed: {},
   created() {},
   components: {},
-  emits: [],
+  emits: ['addNote'],
 }

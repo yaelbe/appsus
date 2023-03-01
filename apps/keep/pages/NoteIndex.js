@@ -20,7 +20,10 @@ export default {
   },
   methods: {
     createNote(note) {
-      noteService.save(note).then((notes) => (this.notes = notes))
+      noteService
+        .save(note)
+        .then(noteService.query)
+        .then((notes) => (this.notes = notes))
     },
   },
   computed: {},
