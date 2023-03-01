@@ -6,7 +6,7 @@ export default {
   props: [],
   template: `
         <h1>Notes</h1>
-        <NoteAdd></NoteAdd>
+        <NoteAdd @addNote="createNote"></NoteAdd>
         <section v-if="notes" class="note-page">
             <NoteList :notes="notes"></NoteList>
         </section>`,
@@ -16,7 +16,11 @@ export default {
       notes: null,
     }
   },
-  methods: {},
+  methods: {
+    createNote(info) {
+      console.log(info)
+    },
+  },
   computed: {},
   created() {
     noteService.query().then((notes) => (this.notes = notes))
@@ -25,5 +29,4 @@ export default {
     NoteList,
     NoteAdd,
   },
-  emits: [],
 }
