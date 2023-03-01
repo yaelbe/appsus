@@ -1,0 +1,9 @@
+.add-note {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 var(--padding);
+}
+
+.add-note input[type='text'] {
+  flex-grow: 1;
+}
