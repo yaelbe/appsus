@@ -1,8 +1,8 @@
 export default {
   props: [],
   template: `
-    <form class="add-note" @submit.prevent="addNote">
-      <input ref="text" type="text" v-model="info.txt"  class="note-txt" placeholder="What's on your mind..." />
+    <form class="add-note" @submit.prevent="add">
+      <input ref="text" type="text" v-model="txt"  class="note-txt" placeholder="What's on your mind..." />
         <nav class="add-type">
             <button class="type-btn" @click.prevent="txtNote"><i class="fa-regular fa-comment"></i></button>
             <button class="type-btn" @click.prevent="imgNote"><i class="fa-regular fa-image"></i></button>
@@ -14,17 +14,27 @@ export default {
 
   data() {
     return {
-      info: {},
+      txt: '',
+      note: this.emptyNote(),
     }
   },
   methods: {
     txtNote() {
-      this.info.type = 'TxtNote'
-      this.$emit('addNote', this.info)
+      this.note.type = 'TxtNote'
+      this.note.info.txt = this.txt
+      this.$emit('addNote', JSON.parse(JSON.stringify(this.note)))
     },
     imgNote() {},
     videoNode() {},
     ListNode() {},
+    emptyNote() {
+      return {
+        info: {},
+        isPinned: false,
+        style: { backgroundColor: '#fff' },
+      }
+    },
+    add() {},
   },
   computed: {},
   created() {},

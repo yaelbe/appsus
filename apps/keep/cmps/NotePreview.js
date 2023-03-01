@@ -8,7 +8,7 @@ import VideoNote from './types/VideoNote.js'
 export default {
   props: ['note'],
   template: `
-    <article class="note-preview" :style="background">
+    <article v-if="note" class="note-preview" :style="background">
         <component :is="note.type" :info="note.info"/>
     </article>
     `,
