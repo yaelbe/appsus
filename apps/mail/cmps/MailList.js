@@ -17,7 +17,6 @@ export default {
   },
   methods: {
     handleDetails(mailID) {
-      console.log(mailID);
       router.push(`/mail/${mailID}`);
     },
   },
