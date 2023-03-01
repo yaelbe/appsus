@@ -7,6 +7,7 @@ export default {
 
         <section class="mail-page">
             <h1>Mail Index</h1>
+            <button @clicK="handleAddMail">Add Mail</button>
             <MailList :mails="mails"/>
         </section>
   `,
@@ -16,7 +17,11 @@ export default {
       mails: null,
     };
   },
-  methods: {},
+  methods: {
+    handleAddMail() {
+      console.log("hello");
+    },
+  },
   computed: {},
   created() {
     mailService.query().then((mails) => (this.mails = mails));
