@@ -1,6 +1,4 @@
-
-
-.main-list {
-list-style-type: none;
-padding: 20px;
+.mail-page{
+    padding: 0 var(--padding);
 }
+
