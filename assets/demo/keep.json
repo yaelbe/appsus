@@ -1,7 +1,7 @@
 [
   {
     "id": "n101",
-    "type": "note-txt",
+    "type": "TxtNote",
     "isPinned": true,
     "info": {
       "txt": "Just Do It!💫"
@@ -12,9 +12,9 @@
   },
   {
     "id": "n102",
-    "type": "note-img",
+    "type": "ImgNote",
     "info": {
-      "url": "https://www.wordsonimages.com/pics/102687-o.jpg",
+      "url": "https://i.pinimg.com/564x/64/23/5f/64235f0e53809c42062ec89141186501.jpg",
       "title": "Remember"
     },
     "style": {
@@ -23,7 +23,7 @@
   },
   {
     "id": "n103",
-    "type": "note-img",
+    "type": "ImgNote",
     "isPinned": true,
     "info": {
       "url": "/assets/img/sample.png",
@@ -35,10 +35,10 @@
   },
   {
     "id": "n104",
-    "type": "note-todos",
+    "type": "ListNote",
     "info": {
       "label": "Get my stuff together",
-      "todos": [
+      "tasks": [
         { "txt": "Sprint work", "doneAt": null },
         { "txt": "Return to Shein", "doneAt": 187111111 }
       ]
@@ -49,7 +49,7 @@
   },
   {
     "id": "n105",
-    "type": "note-todos",
+    "type": "ListNote",
     "info": {
       "label": "House missions",
       "todos": [
@@ -64,7 +64,7 @@
   },
   {
     "id": "n106",
-    "type": "note-video",
+    "type": "VideoNote",
     "info": {
       "txt": "Unicorn",
       "url": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/B7vuaEv1b24\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
@@ -75,7 +75,7 @@
   },
   {
     "id": "n107",
-    "type": "note-img",
+    "type": "ImgNote",
     "info": {
       "url": "/assets/img/bike.jpeg",
       "title": "My Bike"
@@ -86,7 +86,7 @@
   },
   {
     "id": "n108",
-    "type": "note-txt",
+    "type": "TxtNote",
     "isPinned": true,
     "info": {
       "txt": "Surprise party for my man!"
@@ -97,7 +97,7 @@
   },
   {
     "id": "n109",
-    "type": "note-todos",
+    "type": "ListNote",
     "isPinned": true,
     "info": {
       "label": "Grocery List",
@@ -114,7 +114,7 @@
   },
   {
     "id": "n110",
-    "type": "note-img",
+    "type": "ImgNote",
     "info": {
       "url": "https://i.pinimg.com/originals/1d/66/f2/1d66f2f91cbb28324fab2627dc123e18.jpg",
       "title": "Pooh"
