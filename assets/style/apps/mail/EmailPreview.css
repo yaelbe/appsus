@@ -1,6 +1,6 @@
 .mail-preview{
     display: grid;
-    grid-template-columns: 30px 12rem 1fr 50px
+    grid-template-columns: 30px var(--mailPreview) 1fr 50px
 }
 
 .mail-preview h1{

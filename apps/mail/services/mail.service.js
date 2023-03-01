@@ -9,6 +9,8 @@ _createDemo();
 export const mailService = {
   query,
   get,
+  getEmptyMail,
+  save,
 };
 
 function query(filterBy = {}) {
@@ -20,9 +22,27 @@ function get(mailId) {
 }
 
 function _createDemo() {
-  console.log("hi");
-  const mails = demoMails;
-  _save(MAIL_KEY, mails);
+  const mails = utilService.loadFromStorage(MAIL_KEY);
+  if (!mails || !mails.length) {
+    utilService.saveToStorage(MAIL_KEY, demoMails);
+  }
+}
+
+function save(mail) {
+  return storageService.post(MAIL_KEY, mail, false);
+}
+
+function getEmptyMail() {
+  return {
+    id: "",
+    subject: "",
+    body: "",
+    isRead: false,
+    sendAt: null,
+    removedAt: null,
+    from: "",
+    to: "",
+  };
 }
 
 function _save(Key, item) {
