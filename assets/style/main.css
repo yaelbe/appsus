@@ -18,4 +18,8 @@
 @import 'apps/mail/EmailIndex.css';
 @import 'apps/mail/EmailList.css';
 @import 'apps/mail/EmailPreview.css';
+
+/* Keep */
 @import 'apps/note/NoteIndex.css';
+@import 'apps/note/NoteList.css';
+@import 'apps/note/NotePreview.css';

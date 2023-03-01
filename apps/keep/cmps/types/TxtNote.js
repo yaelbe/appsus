@@ -11,9 +11,7 @@ export default {
   },
   methods: {},
   computed: {},
-  created() {
-    console.log('create Txt Note')
-  },
+  created() {},
   components: {},
   emits: [],
 }

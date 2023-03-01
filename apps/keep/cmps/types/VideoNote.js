@@ -4,9 +4,7 @@ export default {
     <section v-html="info.url" class="note-info">
     </section>
     `,
-  created() {
-    console.log('create video Note')
-  },
+  created() {},
   data() {
     return {}
   },

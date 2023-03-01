@@ -8,9 +8,7 @@ export default {
         </audio>
     </section>
     `,
-  created() {
-    console.log('create Audio Note')
-  },
+  created() {},
   data() {
     return {}
   },
