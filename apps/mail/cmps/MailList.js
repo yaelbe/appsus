@@ -1,3 +1,4 @@
+import { router } from "../../../routes.js";
 import { mailService } from "../services/mail.service.js";
 import mailPreview from "./MailPreview.js";
 
@@ -5,7 +6,7 @@ export default {
   props: ["mails"],
   template: `
   <ul class="main-list">
-     <li v-for="mail in mails" :key="mail.id">
+     <li @click="handleDetails(mail.id)" v-for="mail in mails" :key="mail.id">
         <mailPreview :mail="mail"/>
      </li>
  </ul>
@@ -14,7 +15,12 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    handleDetails(mailID) {
+      console.log(mailID);
+      router.push(`/mail/${mailID}`);
+    },
+  },
   computed: {},
   created() {},
   components: {

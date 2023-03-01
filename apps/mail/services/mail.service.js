@@ -8,10 +8,15 @@ _createDemo();
 
 export const mailService = {
   query,
+  get,
 };
 
 function query(filterBy = {}) {
   return storageService.query(MAIL_KEY).then();
+}
+
+function get(mailId) {
+  return storageService.get(MAIL_KEY, mailId);
 }
 
 function _createDemo() {
