@@ -1,0 +1,7 @@
+.note-list {
+  column-count: auto;
+  height: 100%;
+  width: 100%;
+  column-width: var(--colWidth);
+  padding: var(--padding);
+}
