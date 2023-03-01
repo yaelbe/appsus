@@ -1,0 +1,9 @@
+.app-footer {
+  background-color: var(--clr5);
+  color: var(--clr3);
+  min-height: 5vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+}

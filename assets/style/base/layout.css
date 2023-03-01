@@ -4,4 +4,14 @@
   padding-right: 1.6rem;
 }
 
-
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+}
+.router-view {
+  flex-grow: 1;
+  height: 100%;
+  background-color: aliceblue;
+}
