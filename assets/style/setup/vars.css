@@ -2,7 +2,7 @@
   /* background */
   --clr1: #daf8e3;
   /* modal background */
-  --clr2: ##97ebdb;
+  --clr2: #97ebdb;
   /* border */
   --clr3: #00c2c7;
   /* buttons */
@@ -16,5 +16,5 @@
 
   --colWidth: 300px;
   --padding: 32px;
-  --mailPreview:12rem;
+  --mailPreview: 12rem;
 }

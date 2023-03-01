@@ -15,7 +15,7 @@
     "type": "ImgNote",
     "info": {
       "url": "https://i.pinimg.com/564x/64/23/5f/64235f0e53809c42062ec89141186501.jpg",
-      "title": "Remember"
+      "txt": "Remember"
     },
     "style": {
       "backgroundColor": "#fff"
@@ -27,7 +27,7 @@
     "isPinned": true,
     "info": {
       "url": "/assets/img/sample.png",
-      "title": "My Love"
+      "txt": "My Love"
     },
     "style": {
       "backgroundColor": "#fdcfe8"
@@ -52,7 +52,7 @@
     "type": "ListNote",
     "info": {
       "label": "House missions",
-      "todos": [
+      "tasks": [
         { "txt": "Wash the car", "doneAt": null },
         { "txt": "Fix the sink", "doneAt": null },
         { "txt": "Call Michael P.", "doneAt": null }
@@ -67,7 +67,7 @@
     "type": "VideoNote",
     "info": {
       "txt": "Unicorn",
-      "url": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/B7vuaEv1b24\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture\" allowfullscreen></iframe>"
+      "url": "wo2QZyxnd-Y"
     },
     "style": {
       "backgroundColor": "#fff"
@@ -78,7 +78,7 @@
     "type": "ImgNote",
     "info": {
       "url": "/assets/img/bike.jpeg",
-      "title": "My Bike"
+      "txt": "My Bike"
     },
     "style": {
       "backgroundColor": "#fff"
@@ -101,7 +101,7 @@
     "isPinned": true,
     "info": {
       "label": "Grocery List",
-      "todos": [
+      "tasks": [
         { "txt": "Milk", "doneAt": null },
         { "txt": "Bread", "doneAt": null },
         { "txt": "Yogurt", "doneAt": null },
@@ -117,7 +117,7 @@
     "type": "ImgNote",
     "info": {
       "url": "https://i.pinimg.com/originals/1d/66/f2/1d66f2f91cbb28324fab2627dc123e18.jpg",
-      "title": "Pooh"
+      "txt": "Pooh"
     },
     "style": {
       "backgroundColor": "#fff"
