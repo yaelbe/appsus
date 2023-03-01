@@ -1,0 +1,12 @@
+.addMail-form{
+}
+
+.addMail-form >*{
+    margin: 10px;
+}
+
+.addMail-form input{
+    margin: 10px auto;
+    text-align:  center;
+}
+

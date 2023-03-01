@@ -1,15 +1,19 @@
 .modal {
     display: flex;
     flex-direction: column;
-  
+
+    width: 350px;
+    height: 350px;
+    
     position: fixed;
-    top: 50%;
-    left: 50%;
+    top: 73.5%;
+    left: 15.5%;
     transform: translate(-50%, -50%);
     z-index: 2;
     border: 1px solid #666;
     border-radius: 10px;
     transition: all 0.3s;
     overflow: hidden;
-    background-color: var(--color1);
+    color: var(--clr1);
+    background-color: var(--clr4);
   }

@@ -5,11 +5,11 @@ export default {
   props: [],
   template: `
        <section>
-            <form @submit.prevent="save">
-              From: <input type="text" v-model="mail.from">
-              TO: <input type="text" v-model="mail.to">
-              Subject: <input type="text" v-model="mail.subject">
-              body: <input type="text" v-model="mail.body">
+            <form class="addMail-form" @submit.prevent="save">
+              From: <input type="text" v-model="mail.from"><br/>
+              To: <input type="text" v-model="mail.to"><br/>
+              Subject: <input type="text" v-model="mail.subject"><br/>
+              body: <input type="text" v-model="mail.body"><br/>
               <button>Save</button>
             </form>
         </section>
