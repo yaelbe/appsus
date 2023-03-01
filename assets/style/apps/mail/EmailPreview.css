@@ -1,0 +1,29 @@
+.mail-preview{
+    display: grid;
+    grid-template-columns: 
+    minmax(20px,1fr)
+    minmax(100px,1fr)
+    minmax(auto-fit,900px)
+    minmax(20px,1fr)
+    ;
+    
+}
+
+.mail-preview :hover{
+    box-shadow: -1px 1px 5px 0px #000000;
+}
+
+.mail-preview p{
+    grid-column: 3;
+    text-align: start;
+    white-space: nowrap;
+}
+
+.mail-preview h3{
+    width:250px;
+}
+
+.mail-preview h1{
+    width:50px;
+}
+
