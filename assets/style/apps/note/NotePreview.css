@@ -3,22 +3,68 @@
   padding: 5px;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
+  align-items: center;
   border: 1px solid #7c7c7c;
   border-radius: 5px;
-  transition: box-shadow 0.2s;
-  overflow-wrap: anywhere;
-  background-color: #fff;
-  break-inside: avoid-column;
   margin-bottom: 10px;
+  break-inside: avoid;
   color: var(--txt);
 }
 
 .note-preview h3 {
   font-family: main;
   color: var(--txt);
+  text-align: start;
 }
 
 .note-preview iframe {
   width: var(--colWidth);
+}
+
+.note-preview img {
+  border-radius: 5px;
+}
+.note-info {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-content: center;
+}
+
+.note-info h3 {
+  font-family: main;
+  color: var(--txt);
+}
+
+/* todoList  */
+.note-preview span.done {
+  text-decoration: line-through;
+}
+.note-preview ul {
+  width: 100%;
+}
+.note-preview ul li {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+}
+input[type='checkbox'] {
+  width: 2em;
+  height: 2em;
+}
+
+.note-preview li p {
+  margin: 0;
+}
+
+/* img note */
+
+.note-preview.img-note {
+  flex-direction: row;
+}
+
+.note-preview.img-note img {
+  object-fit: cover;
 }
