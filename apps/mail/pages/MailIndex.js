@@ -4,10 +4,9 @@ import { mailService } from "../services/mail.service.js";
 export default {
   props: [],
   template: `
-
         <section class="mail-page">
+           <button @click="handleAddMail">Add Mail</button>
             <h1>Mail Index</h1>
-            <button @clicK="handleAddMail">Add Mail</button>
             <MailList :mails="mails"/>
         </section>
   `,
