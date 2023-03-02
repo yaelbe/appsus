@@ -6,7 +6,6 @@ export default {
   props: [],
   template: `
     <section v-if="notes">
-        <h1>Notes</h1>
         <NoteAdd @addNote="createNote"></NoteAdd>
         <section v-if="notes" class="note-page">
             <NoteList :notes="notes"></NoteList>

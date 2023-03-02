@@ -14,4 +14,5 @@
   flex-grow: 1;
   overflow: scroll;
   overflow-x: hidden;
+  margin-block-start: 1em;
 }

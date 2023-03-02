@@ -22,7 +22,7 @@ function save(note) {
     return storageService.put(KEEP_KEY, note)
   }
   note.id = utilService.makeId()
-  return storageService.post(KEEP_KEY, note)
+  return storageService.post(KEEP_KEY, note, false)
 }
 
 function __createNotes() {
