@@ -6,10 +6,10 @@ export default {
   template: `
 
         <article class="mail-preview" :class="handleOpen">
-            <div v-html="getSvg('star')"></div>
+            <button class="svg-preview" @click.stop="toggleStar" title="important" v-html="getSvg(handleStar)"></button>
             <h3>{{mail.subject}}</h3>
             <p>{{mail.body}}</p>
-            <p><span class="preview-time">{{handleTime}}</span></p>
+            <h6><span class="preview-time">{{handleTime}}</span></h6>
         </article>
         <section class ="options-mail">
             <button class="option-mail-btn" @click.stop="remove" title="Delete" v-html="getSvg('trashFill')"></button>
@@ -32,6 +32,10 @@ export default {
     share() {
       console.log(hello);
     },
+    toggleStar() {
+      console.log("hello");
+      this.mail.isStar = !this.mail.isStar;
+    },
   },
   computed: {
     handleTime() {
@@ -40,6 +44,12 @@ export default {
     handleOpen() {
       if (!this.mail.isRead) return "openEmail";
       return "";
+    },
+    handleStar() {
+      if (this.mail.isStar === true) {
+        return "starFill";
+      }
+      return "star";
     },
   },
   mounted() {},

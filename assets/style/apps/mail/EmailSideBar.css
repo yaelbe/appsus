@@ -1,0 +1,15 @@
+.sidebar-li{
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+
+.sidebar-li:hover{
+    box-shadow: 0px 0px 5px 6px rgb(0 0 0 / 12%);
+
+}

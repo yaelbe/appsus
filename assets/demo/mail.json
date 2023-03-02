@@ -7,6 +7,7 @@
         "sentAt": 1677680812462,
         "removedAt": null,
         "from": "momo@momo.com",
+        "isStar": false,
         "to": "user@appsus.com"
     },
     {
@@ -17,6 +18,7 @@
         "sentAt": 1677280812462,
         "removedAt": null,
         "from": "momo@momo.com",
+        "isStar": true,
         "to": "user@appsus.com"
     },
     {
@@ -27,6 +29,7 @@
         "sentAt": 1677680812462,
         "removedAt": null,
         "from": "yaron_ca@momo.com",
+        "isStar": false,
         "to": "user@appsus.com"
     },
     {
@@ -37,6 +40,7 @@
         "sentAt": 1677680812462,
         "removedAt": null,
         "from": "spam@facebook.com",
+        "isStar": true,
         "to": "user@appsus.com"
     },
     {
@@ -47,6 +51,7 @@
         "sentAt": 1677680812462,
         "removedAt": null,
         "from": "facebook@spam.com",
+        "isStar": false,
         "to": "user@appsus.com"
     },
     {
@@ -57,6 +62,7 @@
         "sentAt": 1677680812462,
         "removedAt": null,
         "from": "reallyrealy@whatYouWant.com",
+        "isStar": false,
         "to": "user@appsus.com"
     },
     {
@@ -67,6 +73,7 @@
         "sentAt": 1677680812462,
         "removedAt": null,
         "from": "Hummas@servery.com",
+        "isStar": false,
         "to": "user@appsus.com"
     },
     {
@@ -77,6 +84,7 @@
         "sentAt": 1677680812462,
         "removedAt": null,
         "from": "spam@facebook.com",
+        "isStar": false,
         "to": "user@appsus.com"
     },
     {
@@ -87,6 +95,7 @@
         "sentAt": 1677680812462,
         "removedAt": null,
         "from": "sharon_frankl.com",
+        "isStar": true,
         "to": "user@appsus.com"
     },
     {
@@ -97,6 +106,7 @@
         "sentAt": 1677680812462,
         "removedAt": null,
         "from": "US-Army@seaLion.com",
+        "isStar": false,
         "to": "user@appsus.com"
     },
     {
@@ -107,6 +117,7 @@
         "sentAt": 1677680812462,
         "removedAt": null,
         "from": "hammus@spam.com",
+        "isStar": false,
         "to": "user@appsus.com"
     },
     {
@@ -117,6 +128,7 @@
         "sentAt": 1677680812462,
         "removedAt": null,
         "from": "momo@momo.com",
-        "to": "user@appsus.com"
+        "isStar": true,
+        "to": "gabi@appsus.com"
     }
 ]
