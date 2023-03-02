@@ -7,9 +7,9 @@ export default {
   template: `
   <ul class="main-list">
      <li @click="handleDetails(mail.id)" v-for="mail in mails" :key="mail.id" class="mail-list">
-        <MailPreview :mail="mail" @remove="remove"/>
+       <MailPreview :mail="mail" @remove="remove"/>
      </li>  
- </ul>
+  </ul>
   `,
 
   data() {

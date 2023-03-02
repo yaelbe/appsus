@@ -7,6 +7,10 @@
 grid-column: 1;
 }
 
+.openEmail{
+background-color:gainsboro;
+}
+
 .mail-preview h3{
     white-space: nowrap;
     overflow: hidden;
