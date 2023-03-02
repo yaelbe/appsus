@@ -47,6 +47,7 @@ function getEmptyMail() {
     removedAt: null,
     from: "",
     to: "",
+    isStar: false,
   };
 }
 

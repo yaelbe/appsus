@@ -2,6 +2,7 @@ import MailList from "../cmps/MailList.js";
 import { mailService } from "../services/mail.service.js";
 import MailAdd from "./MailAdd.js";
 import MailSideBar from "../cmps/MailSideBar.js";
+import filterBy from "../cmps/MailFilter.js";
 
 export default {
   props: [],
@@ -10,12 +11,16 @@ export default {
       <section class="navbar">
          <h1>Mail Index</h1>
          <button @click="handleAddMail">Add Mail</button>
+         <filterBy @filter="setFilterBy"/>
       </section>
       <section class="mail-page">
-         <MailList :mails="mails" @remove="deleteMail"/>
+         <MailList 
+         :mails="filteredMails"
+         v-if="mails"
+          @remove="deleteMail"/>
       </section>
       <section class="mail-sidebar">
-         <MailSideBar/>
+         <MailSideBar @filter="setFilterBy"/>
       </section>
   </section>
 <MailAdd class="modal" @create="createMail" v-if="isOpen"  />
@@ -25,6 +30,7 @@ export default {
     return {
       mails: null,
       isOpen: false,
+      filterBy: {},
     };
   },
   methods: {
@@ -45,8 +51,18 @@ export default {
         .then((mails) => (this.mails = mails))
         .catch(console.log);
     },
+    setFilterBy(filterBy) {
+      console.log(filterBy);
+      this.filterBy = filterBy;
+    },
   },
-  computed: {},
+  computed: {
+    filteredMails() {
+      console.log(this.filterBy);
+      const regex = new RegExp(this.filterBy.subject, "i");
+      return this.mails.filter((mail) => regex.test(mail.subject));
+    },
+  },
   created() {
     mailService.query().then((mails) => (this.mails = mails));
   },
@@ -55,6 +71,7 @@ export default {
     mailService,
     MailAdd,
     MailSideBar,
+    filterBy,
   },
   emits: [],
 };
