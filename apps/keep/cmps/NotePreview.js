@@ -8,9 +8,9 @@ import VideoNote from './types/VideoNote.js'
 import ColorPicker from './ColorPicker.js'
 
 export default {
-  props: ['note'],
+  props: ['note', 'colorOwner'],
   template: `
-    <article v-if="note" class="note-preview" :style="background">
+    <article v-if="note" class="note-preview" :style="background" ref="noteCard">
         <component :is="note.type" :info="note.info"/>
 
         <section class="options">
@@ -18,16 +18,16 @@ export default {
             <button class="options-btn" @click.prevent="remove" title="Delete"><i class="fa-solid fa-trash"></i></button>
             <button class="options-btn" @click.prevent="openColorPicker($event)" title="Change color"><i class="fa-solid fa-palette"></i></button>
             <button class="options-btn" @click.prevent="pin" title="Pin"><i class="fa-solid fa-thumbtack"></i></button>
-            <button class="options-btn" @click.prevent="edit" title="Edit note"><i class="fa-solid fa-pencil"></i></button> 
         </section>
 
-        <ColorPicker v-if="colorPalletOpen" @color="updateColor"></ColorPicker>
+        <ColorPicker v-show="colorPalletOpen" @color="updateColor" :style="{width: cardWidth}"></ColorPicker>
 
     </article>
     `,
   data() {
     return {
       colorPalletOpen: false,
+      cardWidth: null,
     }
   },
   methods: {
@@ -35,7 +35,10 @@ export default {
     remove() {
       this.$emit('updateNote', this.note.id)
     },
-    pin() {},
+    pin() {
+      this.note.isPinned = !this.note.isPinned
+      this.$emit('updateNote', JSON.parse(JSON.stringify(this.note)))
+    },
     edit() {},
     updateColor(color) {
       this.colorPalletOpen = !this.colorPalletOpen
@@ -43,13 +46,25 @@ export default {
       this.$emit('updateNote', JSON.parse(JSON.stringify(this.note)))
     },
     openColorPicker(ev) {
-      console.log('open color picker', ev)
+      const width = this.$refs.noteCard.offsetWidth
+      this.cardWidth = width + 'px'
       this.colorPalletOpen = !this.colorPalletOpen
+      console.log('openColorPicker', this.note.id)
+      this.$emit('colorOwnerChanged', this.note.id)
     },
   },
   computed: {
     background() {
       return { backgroundColor: this.note.style.backgroundColor }
+    },
+  },
+
+  watch: {
+    colorOwner(newVal) {
+      console.log('new color owner', newVal)
+      if (this.note.id !== newVal) {
+        this.colorPalletOpen = false
+      }
     },
   },
   components: {

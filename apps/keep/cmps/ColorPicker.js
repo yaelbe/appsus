@@ -18,10 +18,13 @@ export default {
     `,
 
   data() {
-    return {}
+    return {
+      isActive: '',
+    }
   },
   methods: {
     choose(color) {
+      this.isActive = color
       this.$emit('color', color)
     },
   },

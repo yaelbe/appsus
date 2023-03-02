@@ -5,10 +5,11 @@ import NoteAdd from '../cmps/NoteAdd.js'
 export default {
   props: [],
   template: `
-    <section v-if="notes">
+    <section class="full-height" v-if="notes">
         <NoteAdd @addNote="saveNote"></NoteAdd>
         <section v-if="notes" class="note-page">
-            <NoteList :notes="notes" @updateNote="saveNote"></NoteList>
+            <NoteList :notes="pinned" @updateNote="saveNote"></NoteList>
+            <NoteList :notes="others" @updateNote="saveNote"></NoteList>
         </section>
     </section>`,
 
@@ -33,7 +34,14 @@ export default {
       }
     },
   },
-  computed: {},
+  computed: {
+    pinned() {
+      return this.notes.filter((note) => note.isPinned)
+    },
+    others() {
+      return this.notes.filter((note) => !note.isPinned)
+    },
+  },
   created() {
     noteService.query().then((notes) => (this.notes = notes))
   },
