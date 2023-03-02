@@ -1,0 +1,19 @@
+.mail-layout{
+    display: grid;
+    grid-template-columns: 150px 1fr;
+}
+
+
+.mail-layout .mail-sidebar{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.mail-page{
+    grid-column: 2;
+}
+
+.navbar{
+    grid-row: 1 ;
+    grid-column: 1/-1;
+}

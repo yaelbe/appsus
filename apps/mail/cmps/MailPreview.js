@@ -4,16 +4,31 @@ export default {
   props: ["mail"],
   template: `
         <article class="mail-preview">
-            <div v-html="getSvg(handleStar)"></div>
+            <div v-html="getSvg('star')"></div>
             <h3>{{mail.subject}}</h3>
             <p>{{mail.body}}</p>
             <p><span class="preview-time">{{handleTime}}</span></p>
         </article>
+        <section class ="options-mail">
+            <button class="option-mail-btn" @click.stop="remove" title="Delete" v-html="getSvg('trashFill')"></button>
+            <button class="option-mail-btn" @click.stop="toggleRead" title="mark as read" v-html="getSvg('sent')"></button>
+            <button class="option-mail-btn" @click.stop="share" title="make to note" v-html="getSvg('share')"></button>
+        </section>
     `,
   created() {},
   methods: {
     getSvg(iconName) {
       return svgService.getMailSvg(iconName);
+    },
+    remove() {
+      this.$emit("remove", this.mail.id);
+    },
+    toggleRead() {
+      this.mail.isRead = !this.mail.isRead;
+      this.$emit("toggle", JSON.parse(JSON.stringify(this.mail)));
+    },
+    share() {
+      console.log(hello);
     },
   },
   computed: {
@@ -38,15 +53,8 @@ export default {
       let formattedTime = month + "/" + year.substr(-2);
       return formattedTime;
     },
-    handleStar() {
-      if (this.mail.isRead) {
-        return "starFill";
-      }
-      return "star";
-    },
   },
   mounted() {},
-  components: {
-    svgService,
-  },
+  components: {},
+  emits: ["remove", "toggle"],
 };

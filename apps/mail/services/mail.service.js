@@ -11,6 +11,7 @@ export const mailService = {
   get,
   getEmptyMail,
   save,
+  remove,
 };
 
 function query(filterBy = {}) {
@@ -19,6 +20,10 @@ function query(filterBy = {}) {
 
 function get(mailId) {
   return storageService.get(MAIL_KEY, mailId);
+}
+
+function remove(mailId) {
+  return storageService.remove(MAIL_KEY, mailId);
 }
 
 function _createDemo() {
