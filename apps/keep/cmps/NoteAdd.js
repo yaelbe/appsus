@@ -89,13 +89,14 @@ export default {
     },
     add() {},
     addYoutube() {
-      this.videoNode()
+      this.videoNote()
       let url = this.note.info.url
       const idx = Math.max(url.lastIndexOf('/'), url.lastIndexOf('='))
       this.note.info.url = url.substring(idx + 1)
       console.log(this.note.info.url)
       this.note.type = 'VideoNote'
       this.$emit('addNote', JSON.parse(JSON.stringify(this.note)))
+      this.note = this.emptyNote()
     },
     addTask() {
       const el = this.$refs.tasks
@@ -105,7 +106,7 @@ export default {
       el.firstChild.focus()
     },
     addList(ev) {
-      this.ListNode()
+      this.ListNote()
       const formData = new FormData(ev.target)
       const fromEntries = Object.fromEntries(formData)
       const tasks = []
