@@ -1,4 +1,13 @@
 .note-page {
   height: 100%;
-  display: grid;
+  display: flex;
+  flex-direction: column;
+}
+.note-page :first-child {
+  height: unset;
+}
+
+.note-page NoteList:last-child {
+  flex-grow: 1;
+  width: 100%;
 }
