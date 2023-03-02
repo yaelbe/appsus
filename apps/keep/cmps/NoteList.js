@@ -3,18 +3,22 @@ export default {
   props: ['notes'],
   template: `
     <section class="note-list">
-    <NodePreview v-for="note in notes" :note="note"></NodePreview>
+    <NodePreview v-for="note in notes" :note="note" @updateNote="update"></NodePreview>
     </section>
 `,
 
   data() {
     return {}
   },
-  methods: {},
+  methods: {
+    update(note) {
+      this.$emit('updateNote', note)
+    },
+  },
   computed: {},
   created() {},
   components: {
     NodePreview,
   },
-  emits: [],
+  emits: ['updateNote'],
 }

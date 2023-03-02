@@ -6,9 +6,9 @@ export default {
   props: [],
   template: `
     <section v-if="notes">
-        <NoteAdd @addNote="createNote"></NoteAdd>
+        <NoteAdd @addNote="saveNote"></NoteAdd>
         <section v-if="notes" class="note-page">
-            <NoteList :notes="notes"></NoteList>
+            <NoteList :notes="notes" @updateNote="saveNote"></NoteList>
         </section>
     </section>`,
 
@@ -18,11 +18,19 @@ export default {
     }
   },
   methods: {
-    createNote(note) {
-      noteService
-        .save(note)
-        .then(noteService.query)
-        .then((notes) => (this.notes = notes))
+    saveNote(note) {
+      if (typeof note === 'string') {
+        noteService
+          .remove(note)
+          .then(noteService.query)
+          .then((notes) => (this.notes = notes))
+          .catch(console.log)
+      } else {
+        noteService
+          .save(note)
+          .then(noteService.query)
+          .then((notes) => (this.notes = notes))
+      }
     },
   },
   computed: {},
