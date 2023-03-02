@@ -6,12 +6,13 @@ import TxtNote from './types/TxtNote.js'
 import VideoNote from './types/VideoNote.js'
 
 import ColorPicker from './ColorPicker.js'
+import NoteDetails from './NoteDetails.js'
 
 export default {
   props: ['note', 'colorOwner'],
   template: `
     <article v-if="note" class="note-preview" :style="background" ref="noteCard">
-        <component :is="note.type" :info="note.info"/>
+        <component :is="note.type" :info="note.info" @click="toggleDetails"/>
 
         <section class="options">
             <button class="options-btn" @click.prevent="duplicate" stitle="Make a copy"><i class="fa-solid fa-copy"></i></button>
@@ -21,6 +22,9 @@ export default {
         </section>
 
         <ColorPicker v-show="colorPalletOpen" @color="updateColor" :style="{width: cardWidth}"></ColorPicker>
+        <NoteDetails v-if="showDetails" :info="note.info" @cancel="showDetails = !showDetails"></NoteDetails>
+        
+
 
     </article>
     `,
@@ -28,6 +32,7 @@ export default {
     return {
       colorPalletOpen: false,
       cardWidth: null,
+      showDetails: false,
     }
   },
   methods: {
@@ -42,6 +47,7 @@ export default {
     edit() {},
     updateColor(color) {
       this.colorPalletOpen = !this.colorPalletOpen
+      if (color === 'close') return
       this.note.style.backgroundColor = color
       this.$emit('updateNote', JSON.parse(JSON.stringify(this.note)))
     },
@@ -51,6 +57,12 @@ export default {
       this.colorPalletOpen = !this.colorPalletOpen
       console.log('openColorPicker', this.note.id)
       this.$emit('colorOwnerChanged', this.note.id)
+    },
+
+    toggleDetails() {
+      console.log('details')
+
+      this.showDetails = !this.showDetails
     },
   },
   computed: {
@@ -75,5 +87,6 @@ export default {
     VideoNote,
     AudioNote,
     ColorPicker,
+    NoteDetails,
   },
 }

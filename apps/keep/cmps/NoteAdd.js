@@ -16,14 +16,14 @@ export default {
     <form v-if="addLink" class="youtube-link add-video centerModal" @submit.prevent="addYoutube">
         <h3>Please enter Youtube link</h3>
         <div class="flex">
-            <input type="url" v-model="note.info.url"  class="note-txt" placeholder="Link here" />
+            <input type="url" v-model="note.info.videoUrl"  class="note-txt" placeholder="Link here" />
             <button type="submit"><i class="fa-solid fa-play"></i></button>
         </div>
     </form>
     <form v-if="showUrl" class="add-video centerModal" @submit.prevent="imgUrlNote">
         <h3>Please enter image link</h3>
         <div class="flex">
-            <input type="url" v-model="note.info.url"  class="note-txt" placeholder="Link here" />
+            <input type="url" v-model="note.info.imgUrl"  class="note-txt" placeholder="Link here" />
             <button type="submit"><i class="fa-solid fa-play"></i></button>
         </div>
     </form>
@@ -61,7 +61,7 @@ export default {
       reader.readAsDataURL(image)
       reader.onload = (e) => {
         this.note.type = 'ImgNote'
-        this.note.info.url = e.target.result
+        this.note.info.imgUrl = e.target.result
         this.$emit('addNote', JSON.parse(JSON.stringify(this.note)))
       }
     },
@@ -90,10 +90,9 @@ export default {
     add() {},
     addYoutube() {
       this.videoNote()
-      let url = this.note.info.url
+      let url = this.note.info.videoUrl
       const idx = Math.max(url.lastIndexOf('/'), url.lastIndexOf('='))
-      this.note.info.url = url.substring(idx + 1)
-      console.log(this.note.info.url)
+      this.note.info.videoUrl = 'https://www.youtube-nocookie.com/embed/' + url.substring(idx + 1)
       this.note.type = 'VideoNote'
       this.$emit('addNote', JSON.parse(JSON.stringify(this.note)))
       this.note = this.emptyNote()

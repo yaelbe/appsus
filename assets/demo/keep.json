@@ -14,7 +14,7 @@
     "id": "n102",
     "type": "ImgNote",
     "info": {
-      "url": "https://i.pinimg.com/564x/64/23/5f/64235f0e53809c42062ec89141186501.jpg",
+      "imgUrl": "https://i.pinimg.com/564x/64/23/5f/64235f0e53809c42062ec89141186501.jpg",
       "txt": "Remember"
     },
     "style": {
@@ -26,7 +26,7 @@
     "type": "ImgNote",
     "isPinned": true,
     "info": {
-      "url": "/assets/img/sample.png",
+      "imgUrl": "/assets/img/sample.png",
       "txt": "My Love"
     },
     "style": {
@@ -37,7 +37,7 @@
     "id": "n104",
     "type": "ListNote",
     "info": {
-      "label": "Get my stuff together",
+      "txt": "Get my stuff together",
       "tasks": [
         { "txt": "Sprint work", "doneAt": null },
         { "txt": "Return to Shein", "doneAt": 187111111 }
@@ -51,7 +51,7 @@
     "id": "n105",
     "type": "ListNote",
     "info": {
-      "label": "House missions",
+      "txt": "House missions",
       "tasks": [
         { "txt": "Wash the car", "doneAt": null },
         { "txt": "Fix the sink", "doneAt": null },
@@ -67,7 +67,7 @@
     "type": "VideoNote",
     "info": {
       "txt": "Unicorn",
-      "url": "wo2QZyxnd-Y"
+      "videoUrl": "https://www.youtube-nocookie.com/embed/wo2QZyxnd-Y"
     },
     "style": {
       "backgroundColor": "#fff"
@@ -77,7 +77,7 @@
     "id": "n107",
     "type": "ImgNote",
     "info": {
-      "url": "/assets/img/bike.jpeg",
+      "imgUrl": "/assets/img/bike.jpeg",
       "txt": "My Bike"
     },
     "style": {
@@ -100,7 +100,7 @@
     "type": "ListNote",
     "isPinned": true,
     "info": {
-      "label": "Grocery List",
+      "txt": "Grocery List",
       "tasks": [
         { "txt": "Milk", "doneAt": null },
         { "txt": "Bread", "doneAt": null },
@@ -116,7 +116,7 @@
     "id": "n110",
     "type": "ImgNote",
     "info": {
-      "url": "https://i.pinimg.com/originals/1d/66/f2/1d66f2f91cbb28324fab2627dc123e18.jpg",
+      "imgUrl": "https://i.pinimg.com/originals/1d/66/f2/1d66f2f91cbb28324fab2627dc123e18.jpg",
       "txt": "Pooh"
     },
     "style": {

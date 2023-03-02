@@ -83,6 +83,10 @@ input[type='checkbox'] {
   width: 100%;
 }
 
+.options.show {
+  opacity: 1;
+}
+
 .note-preview:hover .options {
   opacity: 1;
 }

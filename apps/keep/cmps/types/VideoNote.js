@@ -3,7 +3,7 @@ export default {
   template: `
     <section  class="note-info">
     <h3>{{info.txt}}</h3>
-    <iframe :src=youtubeFullUrl></iframe>
+    <iframe :src=info.videoUrl></iframe>
     </section>
     `,
   created() {},
@@ -13,8 +13,7 @@ export default {
   methods: {},
   computed: {
     youtubeFullUrl() {
-      const url = `https://www.youtube-nocookie.com/embed/` + this.info.url
-      console.log('utube', url)
+      const url = `https://www.youtube-nocookie.com/embed/` + this.info.videoUrl
       return url
     },
   },

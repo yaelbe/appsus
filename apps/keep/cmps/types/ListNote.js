@@ -2,7 +2,7 @@ export default {
   props: ['info'],
   template: `
     <section class="note-info">
-        <h3>{{info.label}}</h3>
+        <h3>{{info.txt}}</h3>
         <ul>
             <li v-for="task in info.tasks" :key="task.txt">
              <input type="checkbox" :checked="task.doneAt" @change="isChecked(task.txt)" />
