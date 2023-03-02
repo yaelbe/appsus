@@ -6,16 +6,16 @@
   height: 350px;
 
   position: fixed;
-  top: 73.5%;
-  left: 15.5%;
-  transform: translate(-50%, -50%);
+  top: 52%;
+  left: 0%;
+  /* transform: translate(-50%, -50%); */
   z-index: 2;
   border: 1px solid #666;
   border-radius: 10px;
   transition: all 0.3s;
   overflow: hidden;
-  color: var(--clr1);
-  background-color: var(--clr4);
+  color: var(--text1);
+  background-color: var(--clr3);
 }
 
 .centerModal {
