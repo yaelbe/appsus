@@ -1,0 +1,28 @@
+.mail-details{
+    padding: 0px var(--padding);
+    font-size:1.5rem;
+
+}
+
+.mail-details-card{
+    display: flex;
+    flex-direction: column;
+    background-color: #eee;
+    height: 60vh;
+    gap: 30px;
+    padding: 0px var(--padding);
+}
+
+.mail-details-card .from{
+    font-size:2.5rem
+}
+
+.mail-details-btn{
+    right: 5%;
+    position: absolute;
+    width: 5vw;
+}
+
+.opened{
+    background-color: gainsboro;
+}

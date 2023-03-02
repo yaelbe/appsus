@@ -20,6 +20,7 @@
 @import 'apps/mail/EmailList.css';
 @import 'apps/mail/EmailPreview.css'; 
 @import 'apps/mail/EmailAdd.css'; 
+@import 'apps/mail/EmailDetails.css'; 
 
 /* Keep */
 @import 'apps/note/NoteIndex.css';
