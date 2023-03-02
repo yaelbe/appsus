@@ -12,7 +12,6 @@ function query(entityType, delay = 500) {
 }
 
 function get(entityType, entityId) {
-  console.log(entityType, entityId)
   return query(entityType).then((entities) => {
     const entity = entities.find((entity) => entity.id === entityId)
     if (!entity) throw new Error(`Unknown Entity ${entityId}`)
@@ -44,6 +43,7 @@ function remove(entityType, entityId) {
     if (idx < 0) throw new Error(`Unknown Entity ${entityId}`)
     entities.splice(idx, 1)
     _save(entityType, entities)
+    return entityId
   })
 }
 
