@@ -3,6 +3,7 @@ import { mailService } from "../services/mail.service.js";
 import MailAdd from "./MailAdd.js";
 import MailSideBar from "../cmps/MailSideBar.js";
 import filterBy from "../cmps/MailFilter.js";
+import { utilService } from "../../../services/util.service.js";
 
 export default {
   props: [],
@@ -11,7 +12,7 @@ export default {
       <section class="navbar">
          <h1>Mail Index</h1>
          <button @click="handleAddMail">Add Mail</button>
-         <filterBy @filter="setFilterBy"/>
+         <!-- <filterBy @filter="setFilterBy"/> -->
       </section>
       <section class="mail-page">
          <MailList 
@@ -38,6 +39,7 @@ export default {
       this.isOpen = !this.isOpen;
     },
     createMail(mail) {
+      console.log(mail);
       this.handleAddMail();
       mailService
         .save(mail)
@@ -53,18 +55,55 @@ export default {
     },
     setFilterBy(filterBy) {
       console.log(filterBy);
-      this.filterBy = filterBy;
+      if (filterBy === "inbox") {
+        this.filterBy = {};
+        this.filterBy.to = mailService.loggedinUser.email;
+      }
+      if (filterBy === "star") {
+        this.filterBy = {};
+        this.filterBy.isStar = true;
+      }
+      if (filterBy === "sent") {
+        this.filterBy = {};
+        this.filterBy.from = mailService.loggedinUser.email;
+      }
     },
   },
   computed: {
     filteredMails() {
-      console.log(this.filterBy);
-      const regex = new RegExp(this.filterBy.subject, "i");
-      return this.mails.filter((mail) => regex.test(mail.subject));
+      const thisFilter = this.filterBy;
+      let filterMails = this.mails;
+      if (thisFilter.to) {
+        filterMails = this.mails.filter((mail) => {
+          if (mail.to === thisFilter.to) {
+            return mail;
+          }
+        });
+      }
+      if (thisFilter.isStar) {
+        filterMails = filterMails.filter((mail) => {
+          console.log(mail.isStar, thisFilter.isStar);
+          if (mail.isStar === thisFilter.isStar) {
+            return mail;
+          }
+        });
+      }
+      if (thisFilter.from) {
+        filterMails = filterMails.filter((mail) => {
+          if (mail.from === thisFilter.from) {
+            return mail;
+          }
+        });
+      }
+      console.log(thisFilter);
+      console.log(filterMails);
+
+      return filterMails;
     },
   },
   created() {
     mailService.query().then((mails) => (this.mails = mails));
+    this.filterBy.to = mailService.loggedinUser.email;
   },
   components: {
     MailList,

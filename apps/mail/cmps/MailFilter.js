@@ -10,7 +10,10 @@ export default {
     `,
   data() {
     return {
-      filterBy: { subject: "" },
+      filterBy: {
+        subject: "",
+        isStar: null,
+      },
     };
   },
   methods: {

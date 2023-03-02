@@ -4,6 +4,11 @@ import demoMails from "../../../assets/demo/mail.json" assert { type: "json" };
 
 const MAIL_KEY = "mailDB";
 
+const loggedinUser = {
+  email: "user@appsus.com",
+  fullname: "Mahatma Appsus",
+};
+
 _createDemo();
 
 export const mailService = {
@@ -12,6 +17,7 @@ export const mailService = {
   getEmptyMail,
   save,
   remove,
+  loggedinUser,
 };
 
 function query(filterBy = {}) {
