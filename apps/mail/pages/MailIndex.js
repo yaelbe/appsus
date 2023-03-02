@@ -1,16 +1,24 @@
 import MailList from "../cmps/MailList.js";
 import { mailService } from "../services/mail.service.js";
 import MailAdd from "./MailAdd.js";
+import MailSideBar from "../cmps/MailSideBar.js";
 
 export default {
   props: [],
   template: `
-        <section class="mail-page">
-          <h1>Mail Index</h1>
-          <button @click="handleAddMail">Add Mail</button>
-          <MailList :mails="mails"/>
-        </section>
-        <MailAdd class="modal" @create="createMail" v-if="isOpen"  />
+  <section class="mail-layout">
+      <section class="navbar">
+         <h1>Mail Index</h1>
+         <button @click="handleAddMail">Add Mail</button>
+      </section>
+      <section class="mail-page">
+         <MailList :mails="mails" @remove="deleteMail"/>
+      </section>
+      <section class="mail-sidebar">
+         <MailSideBar/>
+      </section>
+  </section>
+<MailAdd class="modal" @create="createMail" v-if="isOpen"  />
   `,
 
   data() {
@@ -30,6 +38,13 @@ export default {
         .then(mailService.query)
         .then((mails) => (this.mails = mails));
     },
+    deleteMail(mailId) {
+      mailService
+        .remove(mailId)
+        .then(mailService.query)
+        .then((mails) => (this.mails = mails))
+        .catch(console.log);
+    },
   },
   computed: {},
   created() {
@@ -39,6 +54,7 @@ export default {
     MailList,
     mailService,
     MailAdd,
+    MailSideBar,
   },
   emits: [],
 };

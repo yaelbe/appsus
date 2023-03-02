@@ -7,6 +7,10 @@
 grid-column: 1;
 }
 
+.openEmail{
+background-color:gainsboro;
+}
+
 .mail-preview h3{
     white-space: nowrap;
     overflow: hidden;
@@ -14,10 +18,45 @@ grid-column: 1;
     grid-column: 2;
 }
 
- .main-list li{
-padding: 1.5em;
-}
-.main-list li:hover{ 
-    box-shadow: 0px 0px 5px 6px rgb(0 0 0 / 12%);
+.mail-preview p{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    padding-inline-end: 10px;
 }
 
+.mail-list{
+    padding: 1.5em;
+    position: relative;
+}
+
+.mail-list:hover .options-mail{
+    opacity: 1;
+}
+
+.main-list li:hover{ 
+    box-shadow: 0px 0px 5px 6px rgb(0 0 0 / 12%);
+
+}
+
+.options-mail {
+    position: absolute;
+    bottom: 0.75em;
+    right: 0;
+    display: flex;
+    opacity: 0;
+    transition: opacity 0.5s;
+    justify-content: end;
+    background-color: transparent;
+    align-items: center;
+    width: 100%;
+}
+
+.option-mail-btn {
+    background-color: #fff;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+}
