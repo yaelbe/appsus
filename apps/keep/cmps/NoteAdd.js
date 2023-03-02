@@ -12,12 +12,21 @@ export default {
             <button class="type-btn" @click.prevent="ListNode"><i class="fa-solid fa-list"></i></button>
         </nav>
     </form>
-    <form v-if="addLink" class="youtube-link add-video modal" @submit.prevent="addYoutube">
+    <form v-if="addLink" class="youtube-link add-video centerModal" @submit.prevent="addYoutube">
         <h3>Please enter Youtube link</h3>
         <div class="flex">
             <input type="url" v-model="note.info.url"  class="note-txt" placeholder="Link here" />
             <button type="submit"><i class="fa-solid fa-play"></i></button>
         </div>
+    </form>
+    <form v-if="showList" class="add-video centerModal" @submit.prevent="addList($event)">
+       
+            <input type="text" v-model="note.info.label"  class="note-txt" placeholder="List Name" />
+            <button @click.prevent="addTask">+</button>
+            <div ref="tasks"></div>
+            
+            <button type="submit"><i class="fa-solid fa-play"></i></button>
+        
     </form>
 `,
 
@@ -25,6 +34,7 @@ export default {
     return {
       note: this.emptyNote(),
       addLink: false,
+      showList: false,
     }
   },
   methods: {
@@ -46,7 +56,9 @@ export default {
     videoNode() {
       this.addLink = !this.addLink
     },
-    ListNode() {},
+    ListNode() {
+      this.showList = !this.showList
+    },
     emptyNote() {
       return {
         info: {},
@@ -62,6 +74,25 @@ export default {
       this.note.info.url = url.substring(idx + 1)
       console.log(this.note.info.url)
       this.note.type = 'VideoNote'
+      this.$emit('addNote', JSON.parse(JSON.stringify(this.note)))
+    },
+    addTask() {
+      const el = this.$refs.tasks
+      const html = `<input type="text" name="task" placeholder="Task" />`
+      el.insertAdjacentHTML('afterbegin', html)
+      this.taskCounter++
+    },
+    addList(ev) {
+      this.ListNode()
+      const formData = new FormData(ev.target)
+      const fromEntries = Object.fromEntries(formData)
+      const tasks = []
+      for (const pair of formData.entries()) {
+        //${pair[1] value
+        tasks.push({ txt: pair[1], doneAt: null })
+      }
+      this.note.info.tasks = tasks
+      this.note.type = 'ListNote'
       this.$emit('addNote', JSON.parse(JSON.stringify(this.note)))
     },
   },
