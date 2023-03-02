@@ -1,8 +1,8 @@
 button {
-    cursor: pointer;
-    color: var(--clr5);
+  cursor: pointer;
+  /* color: var(--clr5); */
 }
 
 input {
-    padding: 1em;
+  padding: 1em;
 }

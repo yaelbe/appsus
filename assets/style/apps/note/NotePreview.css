@@ -68,3 +68,29 @@ input[type='checkbox'] {
 .note-preview.img-note img {
   object-fit: cover;
 }
+
+/* bottom options */
+.options {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  display: flex;
+  opacity: 0;
+  transition: opacity 0.5s;
+  justify-content: center;
+  background-color: transparent;
+  align-items: center;
+  width: 100%;
+}
+.note-preview:hover .options {
+  opacity: 1;
+}
+
+.options-btn {
+  background-color: transparent;
+  background-repeat: no-repeat;
+  border: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+}
