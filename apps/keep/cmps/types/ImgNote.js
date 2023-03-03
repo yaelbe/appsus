@@ -1,9 +1,10 @@
 export default {
   props: ['info'],
   template: `
-     <section class="note-info img-note">
-        <h3>{{info.txt}}</h3>
-        <img :src="info.imgUrl" alt="info.url" />
+     <section ref="card" class="note-info img-note">
+        template: `
+     <section ref="card" class="note-info img-note">
+       
     </section>
   `,
 
