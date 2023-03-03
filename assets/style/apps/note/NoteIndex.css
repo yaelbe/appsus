@@ -3,11 +3,10 @@
   display: flex;
   flex-direction: column;
 }
-.note-page :first-child {
+.note-page NoteList:first-child {
   height: unset;
 }
 
-.note-page NoteList:last-child {
+.note-page .others {
   flex-grow: 1;
-  width: 100%;
 }

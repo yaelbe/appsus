@@ -2,8 +2,8 @@ export default {
   props: ['info'],
   template: `
     <section  class="note-info">
-    <h3>{{info.txt}}</h3>
     <iframe :src=info.videoUrl></iframe>
+    <div class="title">{{info.txt}}</div>
     </section>
     `,
   created() {},

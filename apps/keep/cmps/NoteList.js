@@ -1,3 +1,4 @@
+import { noteService } from '../services/note.service.js'
 import NodePreview from './NotePreview.js'
 
 export default {
@@ -5,7 +6,7 @@ export default {
   template: `
     <section class="note-list">
     <NodePreview v-for="note in notes" :note="note" :colorOwner="colorModalOwner" 
-      @updateNote="update" @colorOwnerChanged="updateColorOwner"></NodePreview>
+      @updateNote="update" @colorOwnerChanged="updateColorOwner" :key=note.id></NodePreview>
     </section>
 `,
 

@@ -12,6 +12,7 @@ export default {
             <button class="type-btn" @click.prevent="videoNote"><i class="fa-brands fa-youtube"></i></button>
             <button class="type-btn" @click.prevent="ListNote"><i class="fa-solid fa-list"></i></button>
         </nav>
+        <div  class="divEdit" contentEditable="true">SubText</div>
     </form>
     <form v-if="addLink" class="youtube-link add-video centerModal" @submit.prevent="addYoutube">
         <h3>Please enter Youtube link</h3>
@@ -29,7 +30,7 @@ export default {
     </form>
     <form v-if="showList" class="add-video centerModal" @submit.prevent="addList($event)">
        <header class="flex">
-            <input type="text" v-model="note.info.label"  class="note-txt grow" placeholder="List Name" />
+            <input type="text" v-model="note.info.txt"  class="note-txt grow" placeholder="List Name" />
             <button @click.prevent="addTask" title="Add Task">+</button>
         </header>
             <div ref="tasks" class="flex flex-column ">
@@ -107,7 +108,6 @@ export default {
     addList(ev) {
       this.ListNote()
       const formData = new FormData(ev.target)
-      const fromEntries = Object.fromEntries(formData)
       const tasks = []
       for (const pair of formData.entries()) {
         //${pair[1] value

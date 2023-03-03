@@ -1,7 +1,20 @@
 .note-list {
-  column-count: auto;
+  column-count: 2;
   height: 100%;
-  width: 100%;
+  width: 100vw;
+  column-fill: auto;
   column-width: var(--colWidth);
   padding: var(--padding);
+}
+
+@media (max-width: 800px) {
+  .note-list {
+    column-count: 2;
+  }
+}
+
+@media (min-width: 700px) {
+  .note-list {
+    column-count: 4;
+  }
 }

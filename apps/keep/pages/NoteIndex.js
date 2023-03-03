@@ -9,7 +9,7 @@ export default {
         <NoteAdd @addNote="saveNote"></NoteAdd>
         <section v-if="notes" class="note-page">
             <NoteList :notes="pinned" @updateNote="saveNote"></NoteList>
-            <NoteList :notes="others" @updateNote="saveNote"></NoteList>
+            <NoteList class="others" :notes="others" @updateNote="saveNote"></NoteList>
         </section>
     </section>`,
 
@@ -21,6 +21,8 @@ export default {
   methods: {
     saveNote(note) {
       if (typeof note === 'string') {
+        console.log('Delete')
+
         noteService
           .remove(note)
           .then(noteService.query)

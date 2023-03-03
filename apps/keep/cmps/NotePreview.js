@@ -22,7 +22,7 @@ export default {
         </section>
 
         <ColorPicker v-show="colorPalletOpen" @color="updateColor" :style="{width: cardWidth}"></ColorPicker>
-        <NoteDetails v-if="showDetails" :info="note.info" @cancel="showDetails = !showDetails"></NoteDetails>
+        <NoteDetails v-if="showDetails" :note="note" @cancel="showDetails = !showDetails"></NoteDetails>
         
 
 

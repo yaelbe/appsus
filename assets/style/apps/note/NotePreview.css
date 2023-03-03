@@ -1,6 +1,5 @@
 .note-preview {
   position: relative;
-  padding: 5px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -9,6 +8,7 @@
   border-radius: 5px;
   margin-bottom: 10px;
   break-inside: avoid;
+  padding-bottom: 2em;
   color: var(--txt);
 }
 
@@ -67,6 +67,8 @@ input[type='checkbox'] {
 
 .note-preview.img-note img {
   object-fit: cover;
+  object-position: center center;
+  background-size: cover;
 }
 
 /* bottom options */
@@ -79,12 +81,13 @@ input[type='checkbox'] {
   transition: opacity 0.5s;
   justify-content: center;
   background-color: transparent;
-  align-items: center;
+  align-items: flex-end;
   width: 100%;
 }
 
 .options.show {
   opacity: 1;
+  position: static;
 }
 
 .note-preview:hover .options {
@@ -98,4 +101,20 @@ input[type='checkbox'] {
   cursor: pointer;
   overflow: hidden;
   outline: none;
+}
+/* div title */
+.title {
+  padding: 1em;
+}
+
+.sub-title {
+  padding: 1em;
+}
+.note-info ul li input[type='checkbox'] {
+  min-width: 30px;
+}
+.note-info ul li {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 }

@@ -36,7 +36,7 @@
 .centerModal.big {
   background-color: var(--clr1);
   width: 50%;
-  height: 50%;
+  height: auto;
 }
 
 .modal-overlay {
