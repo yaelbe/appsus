@@ -4,6 +4,7 @@ import ImgNote from './types/ImgNote.js'
 import ListNote from './types/ListNote.js'
 import TxtNote from './types/TxtNote.js'
 import VideoNote from './types/VideoNote.js'
+import MailNote from './types/MailNote.js'
 
 import ColorPicker from './ColorPicker.js'
 import NoteDetails from './NoteDetails.js'
@@ -99,6 +100,7 @@ export default {
     TxtNote,
     VideoNote,
     AudioNote,
+    MailNote,
     ColorPicker,
     NoteDetails,
   },
