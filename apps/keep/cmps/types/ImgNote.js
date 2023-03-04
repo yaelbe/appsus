@@ -25,10 +25,11 @@ export default {
       getMeta(this.info.imgUrl).then((img) => {
         const div = this.$refs.card
         const height = (img.height / img.width) * div.offsetWidth
+        const { imgUrl: url, txt: title = '', subtxt: subtitle = '' } = this.info
         let html = `
-        <div class="imgDiv" style="background-image: url('${this.info.imgUrl}'); height: ${height}px;"></div>
-        <div class="title">${this.info.txt}</div>
-        <div class="subtitle" :style="{ direction: ${this.direction()}}">${this.info.subtxt}</div>`
+        <div class="imgDiv" style="background-image: url('${url}'); height: ${height}px;"></div>
+        <div class="title">${title}</div>
+        <div class="subtitle" :style="{ direction: ${this.direction()}}">${subtitle}</div>`
         div.innerHTML = html
       })
     },
