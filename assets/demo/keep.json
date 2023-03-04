@@ -50,7 +50,7 @@
       ]
     },
     "style": {
-      "backgroundColor": "#fff"
+      "backgroundColor": "#cbf0f8"
     }
   },
   {
@@ -96,7 +96,7 @@
       "txt": "My Bike"
     },
     "style": {
-      "backgroundColor": "#fff"
+      "backgroundColor": "#d7aefb"
     }
   },
   {
@@ -104,10 +104,11 @@
     "type": "TxtNote",
     "isPinned": true,
     "info": {
-      "txt": "Surprise party for my man!"
+      "txt": "Maya Angelou",
+      "subtxt": "“I've learned that people will forget what you said, people will forget what you did, but people will never forget how you made them feel.”"
     },
     "style": {
-      "backgroundColor": "#fff"
+      "backgroundColor": "#fff475"
     }
   },
   {
@@ -140,14 +141,108 @@
     }
   },
   {
+    "id": "n120",
+    "type": "ListNote",
+    "isPinned": true,
+    "info": {
+      "txt": "רשימת מצרכים לעוגת גבינה",
+      "tasks": [
+        {
+          "txt": "שמנת מתוקה",
+          "doneAt": null
+        },
+        {
+          "txt": "ביסקווטים",
+          "doneAt": null
+        },
+        {
+          "txt": "גרידת לימון",
+          "doneAt": null
+        },
+        {
+          "txt": "גבינה ",
+          "doneAt": null
+        },
+        {
+          "txt": "שןקןלד לקישוט ",
+          "doneAt": null
+        }
+      ]
+    },
+    "style": {
+      "backgroundColor": "#e6c9a8"
+    }
+  },
+  {
     "id": "n110",
     "type": "ImgNote",
     "info": {
       "imgUrl": "https://i.pinimg.com/originals/1d/66/f2/1d66f2f91cbb28324fab2627dc123e18.jpg",
-      "txt": "Pooh"
+      "txt": "Pooh",
+      "subtxt": "A hug is always the right size."
+    },
+    "style": {
+      "backgroundColor": "#ccff90"
+    }
+  },
+  {
+    "id": "n124",
+    "type": "MailNote",
+    "info": {
+      "txt": "Stubbing doesn’t improve server",
+      "subtxt": "According to Perry Clarke, stubbing leaves us with “only a set of indexes and records for the message” and comes with all the drawbacks associated with tiered storage taken to an extreme. Clarke describes stubbed emails as “Frankenstein messages” that have been"
     },
     "style": {
       "backgroundColor": "#fff"
+    }
+  },
+  {
+    "id": "n130",
+    "type": "ImgNote",
+    "isPinned": true,
+    "info": {
+      "imgUrl": "https://i.pinimg.com/236x/5d/b5/b6/5db5b6fd70598a84d7275d6c34d1cbd2.jpg",
+      "txt": "Outdoor",
+      "subtxt": "ruh this is the ref jacob used in that one drawfee ep."
+    },
+    "style": {
+      "backgroundColor": "#fff"
+    }
+  },
+  {
+    "id": "n131",
+    "type": "VideoNote",
+    "info": {
+      "txt": "Larissa Liveir loves you all 🫶🔥🤘 #guitarcover #sologuitar ",
+      "videoUrl": "https://www.youtube-nocookie.com/embed/qIV94tzqNjo"
+    },
+    "style": {
+      "backgroundColor": "#fff"
+    }
+  },
+  {
+    "id": "n132",
+    "type": "VideoNote",
+    "isPinned": true,
+    "info": {
+      "txt": " 🫶🔥🤘 #guitarcover #sologuitar ",
+      "videoUrl": "https://www.youtube-nocookie.com/embed/BVjnzkdlDlQ"
+    },
+    "style": {
+      "backgroundColor": "#f28b82"
+    }
+  },
+  {
+    "id": "n133",
+    "type": "ImgNote",
+    "isPinned": true,
+    "info": {
+      "imgUrl": "https://parade.com/.image/c_limit%2Ccs_srgb%2Cq_auto:good%2Cw_620/MTkwNTc1ODgxNjY2MDQ1ODIw/winnie-the-pooh-quotes-eeyore.webp",
+      "txt": "—Eeyore",
+      "subtxt": ""
+    },
+    "style": {
+      "backgroundColor": "#e8eaed"
     }
   }
 ]

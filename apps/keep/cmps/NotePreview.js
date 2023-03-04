@@ -49,7 +49,10 @@ export default {
       this.$emit('updateNote', JSON.parse(JSON.stringify(this.note)))
     },
     edit(note) {
-      // this.showDetails = false
+      this.showDetails = false
+      if (!note) {
+        return
+      }
       this.updateNote(note)
       this.$emit('updateNote', JSON.parse(JSON.stringify(this.note)))
     },

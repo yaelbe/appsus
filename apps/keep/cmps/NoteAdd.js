@@ -82,7 +82,7 @@ export default {
     },
     reset() {
       this.note = this.emptyNote()
-      this.bgColor = '#fffff'
+      this.bgColor = 'white'
       this.showExtendedInput = false
       this.$refs.mainInput.placeholder = "What's on your mind..."
       this.showDetails = false
