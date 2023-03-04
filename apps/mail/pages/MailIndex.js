@@ -11,7 +11,7 @@ export default {
   <section class="mail-layout">
       <section class="navbar">
          <h1>Mail Index</h1>
-         <button @click="handleAddMail">Add Mail</button>
+         <button @click="handleAddMail">compose</button>
          <!-- <filterBy @filter="setFilterBy"/> -->
       </section>
       <section class="mail-page">
@@ -35,6 +35,10 @@ export default {
     };
   },
   methods: {
+    onload() {
+      mailService.query().then((mails) => (this.mails = mails));
+      this.filterBy.to = mailService.loggedinUser.email;
+    },
     handleAddMail() {
       this.isOpen = !this.isOpen;
     },
@@ -46,12 +50,15 @@ export default {
         .then(mailService.query)
         .then((mails) => (this.mails = mails));
     },
-    deleteMail(mailId) {
-      mailService
-        .remove(mailId)
-        .then(mailService.query)
-        .then((mails) => (this.mails = mails))
-        .catch(console.log);
+    deleteMail(mail) {
+      if (mail.removedAt) {
+        return mailService
+          .remove(mail.id)
+          .then(mailService.query)
+          .then((mails) => (this.mails = mails));
+      }
+      mail.removedAt = Date.now();
+      mailService.update(mail);
     },
     setFilterBy(filterBy) {
       console.log(filterBy);
@@ -67,6 +74,14 @@ export default {
         this.filterBy = {};
         this.filterBy.from = mailService.loggedinUser.email;
       }
+      if (filterBy === "draft") {
+        this.filterBy = {};
+        this.filterBy.sentAt = true;
+      }
+      if (filterBy === "trash") {
+        this.filterBy = {};
+        this.filterBy.removedAt = true;
+      }
     },
   },
   computed: {
@@ -75,7 +90,7 @@ export default {
       let filterMails = this.mails;
       if (thisFilter.to) {
         filterMails = this.mails.filter((mail) => {
-          if (mail.to === thisFilter.to) {
+          if (mail.to === thisFilter.to && !mail.removedAt) {
             return mail;
           }
         });
@@ -90,21 +105,32 @@ export default {
       }
       if (thisFilter.from) {
         filterMails = filterMails.filter((mail) => {
-          if (mail.from === thisFilter.from) {
+          if (mail.from === thisFilter.from && mail.sentAt) {
             return mail;
           }
         });
       }
-      console.log(thisFilter);
-      console.log(filterMails);
-
+      if (thisFilter.sentAt) {
+        filterMails = filterMails.filter((mail) => {
+          if (!mail.sentAt) {
+            return mail;
+          }
+        });
+      }
+      if (thisFilter.removedAt) {
+        filterMails = filterMails.filter((mail) => {
+          if (mail.removedAt) {
+            return mail;
+          }
+        });
+      }
       return filterMails;
     },
   },
   created() {
-    mailService.query().then((mails) => (this.mails = mails));
-    this.filterBy.to = mailService.loggedinUser.email;
+    this.onload();
   },
+
   components: {
     MailList,
     mailService,

@@ -5,11 +5,11 @@ export default {
   template: `
   <section class="main-sidebar">
     <ul class="mail-sidebar">
-      <li @click="mainInbox" class="sidebar-li"><span v-html="getSvg('allInbox')"></span>Inbox</li>
-      <li @click="handleStar" class="sidebar-li"><span v-html="getSvg('starFill2')"></span>Stared</li>
-      <li @click="handleSent" class="sidebar-li"><span v-html="getSvg('sent2')"></span>Sent</li>
-      <li class="sidebar-li"><span v-html="getSvg('draft')"></span>Draft</li>
-      <li class="sidebar-li"><span v-html="getSvg('trash')"></span>Trash</li>
+      <li @click="handleFilter('inbox')" class="sidebar-li"><span v-html="getSvg('allInbox')"></span>Inbox</li>
+      <li @click="handleFilter('star')" class="sidebar-li"><span v-html="getSvg('starFill2')"></span>Stared</li>
+      <li @click="handleFilter('sent')" class="sidebar-li"><span v-html="getSvg('sent2')"></span>Sent</li>
+      <li @click="handleFilter('draft')" class="sidebar-li"><span v-html="getSvg('draft')"></span>Draft</li>
+      <li @click="handleFilter('trash')" class="sidebar-li"><span v-html="getSvg('trash')"></span>Trash</li>
     </ul>
   </section>
   `,
@@ -21,14 +21,8 @@ export default {
     getSvg(iconName) {
       return svgService.getMailSvg(iconName);
     },
-    mainInbox() {
-      this.$emit("filter", "inbox");
-    },
-    handleStar() {
-      this.$emit("filter", "star");
-    },
-    handleSent() {
-      this.$emit("filter", "sent");
+    handleFilter(key) {
+      this.$emit("filter", `${key}`);
     },
   },
   computed: {},

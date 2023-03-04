@@ -1,6 +1,6 @@
-import { noteService } from './../services/note.service.js'
-import NoteList from '../cmps/NoteList.js'
-import NoteAdd from '../cmps/NoteAdd.js'
+import { noteService } from "./../services/note.service.js";
+import NoteList from "../cmps/NoteList.js";
+import NoteAdd from "../cmps/NoteAdd.js";
 
 export default {
   props: [],
@@ -16,37 +16,39 @@ export default {
   data() {
     return {
       notes: null,
-    }
+    };
   },
   methods: {
     saveNote(note) {
-      if (typeof note === 'string') {
+      if (typeof note === "string") {
         noteService
           .remove(note)
           .then(noteService.query)
           .then((notes) => (this.notes = notes))
-          .catch(console.log)
+          .catch(console.log);
       } else {
         noteService
           .save(note)
           .then(noteService.query)
-          .then((notes) => (this.notes = notes))
+          .then((notes) => (this.notes = notes));
       }
     },
   },
   computed: {
     pinned() {
-      return this.notes.filter((note) => note.isPinned)
+      return this.notes.filter((note) => note.isPinned);
     },
     others() {
-      return this.notes.filter((note) => !note.isPinned)
+      return this.notes.filter((note) => !note.isPinned);
     },
   },
   created() {
-    noteService.query().then((notes) => (this.notes = notes))
+    noteService.query().then((notes) => (this.notes = notes));
+    console.log("route", this.$route.query.mailJson);
   },
+
   components: {
     NoteList,
     NoteAdd,
   },
-}
+};
