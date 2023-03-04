@@ -31,7 +31,11 @@ export default {
       router.push(`/mail/`);
     },
   },
-  computed: {},
+  computed: {
+    handleRead() {
+      return (this.mail.isRead = true);
+    },
+  },
   created() {
     this.loadMail();
   },

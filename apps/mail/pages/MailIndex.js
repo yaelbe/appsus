@@ -12,13 +12,14 @@ export default {
       <section class="navbar">
          <h1>Mail Index</h1>
          <button @click="handleAddMail">compose</button>
-         <!-- <filterBy @filter="setFilterBy"/> -->
+         <filterBy @filter="setFilterBy"/>
       </section>
       <section class="mail-page">
          <MailList 
          :mails="filteredMails"
          v-if="mails"
-          @remove="deleteMail"/>
+          @remove="deleteMail"
+         />
       </section>
       <section class="mail-sidebar">
          <MailSideBar @filter="setFilterBy"/>
@@ -62,6 +63,10 @@ export default {
     },
     setFilterBy(filterBy) {
       console.log(filterBy);
+      if (filterBy.subject) {
+        this.filterBy = {};
+        this.filterBy.subject = filterBy.subject;
+      }
       if (filterBy === "inbox") {
         this.filterBy = {};
         this.filterBy.to = mailService.loggedinUser.email;
@@ -124,13 +129,13 @@ export default {
           }
         });
       }
-      return filterMails;
+      const regex = new RegExp(this.filterBy.subject, "i");
+      return filterMails.filter((mail) => regex.test(mail.subject));
     },
   },
   created() {
     this.onload();
   },
-
   components: {
     MailList,
     mailService,

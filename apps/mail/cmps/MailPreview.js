@@ -6,7 +6,7 @@ export default {
   props: ["mail"],
   template: `
 
-        <article class="mail-preview" :class="handleOpen">
+        <article class="mail-preview" :class="handleReadView">
             <button class="svg-preview" @click.stop="toggleStar" title="important" v-html="getSvg(handleStar)"></button>
             <h3>{{mail.subject}}</h3>
             <p>{{mail.body}}</p>
@@ -53,7 +53,7 @@ export default {
     handleTime() {
       return utilService.formatTime(this.mail.sentAt);
     },
-    handleOpen() {
+    handleReadView() {
       if (!this.mail.isRead) return "openEmail";
       return "";
     },
