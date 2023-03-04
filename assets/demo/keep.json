@@ -244,5 +244,17 @@
     "style": {
       "backgroundColor": "#e8eaed"
     }
+  },
+  {
+    "id": "n101",
+    "type": "TxtNote",
+    "isPinned": true,
+    "info": {
+      "txt": "ההרשמה למרתון תל אביב נסגרת עוד יומיים",
+      "subtxt": "הכנה לאיש ברזל אילת"
+    },
+    "style": {
+      "backgroundColor": "#aecbfa"
+    }
   }
 ]
