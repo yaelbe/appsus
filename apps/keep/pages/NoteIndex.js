@@ -21,8 +21,7 @@ export default {
   methods: {
     saveNote(note) {
       if (typeof note === "string") {
-      if (typeof note === 'string') {
-        console.log('Delete')
+        console.log("Delete");
 
         noteService
           .remove(note)
@@ -33,13 +32,10 @@ export default {
         noteService
           .save(note)
           .then(noteService.query)
-          .then((notes) => (this.notes = notes));
-          .then((notes) => {
-            this.notes = notes
-          })
+          .then((notes) => (this.notes = notes))
           .catch((err) => {
-            console.log('error saving ', err)
-          })
+            console.log("error saving ", err);
+          });
       }
     },
   },
