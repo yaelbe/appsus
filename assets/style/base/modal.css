@@ -3,19 +3,20 @@
   flex-direction: column;
 
   width: 350px;
-  height: 350px;
+  height: fit-content;
 
   position: fixed;
   top: 0%;
   left: 0%;
-  transform: translate(50%, 50%);
+  transform: translate(2%,50%);
   z-index: 2;
   border: 1px solid #666;
   border-radius: 10px;
   transition: all 0.3s;
   overflow: hidden;
   color: var(--text1);
-  background-color: var(--clr3);
+  background-color: gainsboro;
+  
 }
 
 .centerModal {

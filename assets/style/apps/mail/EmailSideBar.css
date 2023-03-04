@@ -1,3 +1,9 @@
+.mail-sidebar{
+    position: sticky;
+    top: 100px;
+    padding: 10px none;
+}
+
 .sidebar-li{
     display: flex;
     gap: 30px;
@@ -5,11 +11,30 @@
     align-items: center;
 }
 
+.navbar{
+    display: flex;
+    color: var(--clr1);
+    justify-content: space-around;
+    background-color: var(--clr5);
+    padding: 10px 20px;
+}
 
+.navbar input{
+    width: max-content;
+}
 
+.navbar-btn{
+    border-radius:555px;
+    border: none;
+    width: 200px;
+    background-color: whitesmoke;
+}
 
+.navbar-h1{
+    font-size: 35px;
+
+}
 
 .sidebar-li:hover{
     box-shadow: 0px 0px 5px 6px rgb(0 0 0 / 12%);
-
 }
