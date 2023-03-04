@@ -8,9 +8,9 @@ export default {
 
     <div class="mail-details-card">
       <button class="mail-details-btn" @click="backToMain" >x</button>
-      <h1 class="from">From: {{mail.from}}</h1>
-      <h2>Subject: {{mail.subject}}</h2>
-      <p>{{mail.body}}</p>
+      <h1 class="mail-details-from">From: {{mail.from}}</h1>
+      <h2 class="mail-details-subject">Subject: {{mail.subject}}</h2>
+      <p class="mail-details-subject">{{mail.body}}</p>
     </div>
 
   </section>

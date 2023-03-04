@@ -5,22 +5,28 @@
 }
 
 .mail-details-card{
+    position: relative;
     display: flex;
     flex-direction: column;
+    border-radius: 25px;
     background-color: #eee;
     height: 60vh;
     gap: 30px;
     padding: 0px var(--padding);
 }
 
-.mail-details-card .from{
-    font-size:2.5rem
+.mail-details-from{
+    font-size:2.5rem;
+    text-decoration-line: underline;
 }
 
 .mail-details-btn{
-    right: 5%;
+    right:0;
     position: absolute;
     width: 5vw;
+    border-radius: 25%;
+    border: 0.5px solid whitesmoke;
+    background-color: white;
 }
 
 .opened{

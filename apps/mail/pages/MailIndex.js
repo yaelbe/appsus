@@ -10,9 +10,9 @@ export default {
   template: `
   <section class="mail-layout">
       <section class="navbar">
-         <h1>Mail Index</h1>
-         <button @click="handleAddMail">compose</button>
+         <h1 class="navbar-h1">Mail Index</h1>
          <filterBy @filter="setFilterBy"/>
+         <button class="navbar-btn" @click="handleAddMail" placeHolder="Search..." >compose</button>
       </section>
       <section class="mail-page">
          <MailList 

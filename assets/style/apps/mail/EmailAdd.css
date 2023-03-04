@@ -1,10 +1,18 @@
+.addMail-form{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
 
-.addMail-form >*{
-    margin: 10px;
+.mailForm-btn{
+position: relative;
+width: 50px;
+border: 1px solid whitesmoke;
+border-radius: 25%;
+top: 100%;
+left: 86%;
 }
 
 .addMail-form input{
-    margin: 10px auto;
-    text-align:  center;
+    text-align:  left;
 }
-

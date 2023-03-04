@@ -5,13 +5,17 @@ export default {
   props: [],
   template: `
        <section>
-         <button @click.stop="handleDraft">x</button>
          <form class="addMail-form" @submit.prevent="save">
-              From: <input type="text" v-model="mail.from"><br/>
-              To: <input type="text" v-model="mail.to"><br/>
-              Subject: <input type="text" v-model="mail.subject"><br/>
-              body: <input type="text" v-model="mail.body"><br/>
-              <button>Save</button>
+           <button class="mailForm-btn" @click.stop="handleDraft">x</button>
+           <label for="text-from">From:</label>
+             <input id="text-from" type="text" v-model="mail.from">
+           <label for="text-to">To:</label>
+             <input id="text-to" type="text" v-model="mail.to"><br/>
+           <label for="text-subject">Subject:</label>
+             <input id="mail-subject" type="text" v-model="mail.subject"><br/>
+           <label for="text-body">Body:</label>
+              <input id="text-body" type="text" v-model="mail.body"><br/>
+              <button class="mailFormSave-btn">Save</button>
             </form>
         </section>
   `,
