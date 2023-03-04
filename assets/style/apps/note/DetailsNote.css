@@ -48,3 +48,12 @@ input[type='checkbox'] {
   white-space: normal;
   overflow-wrap: anywhere;
 }
+
+.details-footer {
+  position: relative;
+}
+
+.detail-color {
+  position: initial;
+  translate: (0, 0);
+}

@@ -1,7 +1,12 @@
 export default {
-  props: [],
+  props: {
+    position: {
+      type: String,
+      default: '',
+    },
+  },
   template: `
-   <section class="colors">
+   <section class="colors" :class="position" :key="Date.now()">
             <button class="clr1 btn" :class="{checked: isActive === '#f28b82'}" @click="choose('#f28b82')"></button>
             <button class="clr2 btn" :class="{checked: isActive === '#fff475'}" @click="choose('#fff475')"></button>
             <button class="clr3 btn" :class="{checked: isActive === '#fbbc04'}" @click="choose('#fbbc04')"></button>

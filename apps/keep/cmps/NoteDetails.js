@@ -1,9 +1,11 @@
 import { noteService } from '../services/note.service.js'
+import ColorPicker from './ColorPicker.js'
 
 export default {
   props: ['note'],
   template: `
   <div v-if="updateNote.info" class="modal-overlay"  @click="cancel"></div>
+
     <section ref="modal" class="centerModal big hidden" :style="{width: width , backgroundColor: updateNote.style.backgroundColor }">
         <form ref="details" class="details">
         <div v-if="note.info.videoUrl" class="iframe-continuer">
@@ -26,19 +28,27 @@ export default {
         <div class="details-footer flex">
             <section class="options show">
                 <!-- <button class="options-btn" @click.stop="remove" title="Delete"><i class="fa-solid fa-trash"></i></button> -->
-                <button class="options-btn" @click.stop="openColorPicker($event)" title="Change color"><i class="fa-solid fa-palette"></i></button>
+                <button class="options-btn" @click.prevent="openColorPicker($event)" title="Change color" :key="Date.now()"><i class="fa-solid fa-palette"></i></button>
                 <!-- <button class="options-btn" @click.stop="pin" title="Pin"><i class="fa-solid fa-thumbtack"></i></button> -->
             </section>
             <button @click.prevent="cancel" class="type-btn">Cancel</button>
             <button @click.prevent="save" class="type-btn">Create</button>
         </div>
+        
+        <ColorPicker v-if="colorPalletOpen" @color="updateColor" :style="{width: '300px'}" :position="position"></ColorPicker>
+       
+        
     </section>
-  `,
 
+    
+  `,
+  // translate: 0% -150%;
   data() {
     return {
-      width: 10,
+      width: '300px',
+      colorPalletOpen: false,
       updateNote: JSON.parse(JSON.stringify(this.note)),
+      position: 'details',
     }
   },
   methods: {
@@ -51,6 +61,9 @@ export default {
     direction() {
       var rtl_rx = /[\u0591-\u07FF]/
       return rtl_rx.test(this.note.info.txt) ? 'rtl' : 'ltr'
+    },
+    cardWidth() {
+      return this.width + 'px'
     },
   },
   created() {},
@@ -84,7 +97,17 @@ export default {
     subtext(e) {
       this.updateNote.info.subtxt = e.target.innerText
     },
+
+    openColorPicker() {
+      this.colorPalletOpen = true
+    },
+    updateColor(color) {
+      if (color === 'close') {
+        this.colorPalletOpen = false
+      }
+      console.log('color', color)
+    },
   },
-  components: {},
+  components: { ColorPicker },
   emits: ['save'],
 }

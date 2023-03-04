@@ -15,13 +15,13 @@ export default {
         <component :is="note.type" :info="note.info" @click="toggleDetails"/>
 
         <section class="options">
-            <button class="options-btn" @click.prevent="duplicate" stitle="Make a copy"><i class="fa-solid fa-copy"></i></button>
+            <button class="options-btn" @click.prevent="share" stitle="Share to mail"><i class="fa-solid fa-copy"></i></button>
             <button class="options-btn" @click.prevent="remove" title="Delete"><i class="fa-solid fa-trash"></i></button>
-            <button class="options-btn" @click.prevent="openColorPicker($event)" title="Change color"><i class="fa-solid fa-palette"></i></button>
+            <button class="options-btn" @click.prevent="openColorPicker($event)" title="Change color" :key="Date.now()"><i class="fa-solid fa-palette"></i></button>
             <button class="options-btn" @click.prevent="pin" title="Pin"><i class="fa-solid fa-thumbtack"></i></button>
         </section>
 
-        <ColorPicker v-show="colorPalletOpen" @color="updateColor" :style="{width: cardWidth}"></ColorPicker>
+        <ColorPicker v-if="colorPalletOpen" @color="updateColor" :style="{width: cardWidth}" :key=Date.now()></ColorPicker>
         <NoteDetails v-if="showDetails" :note="note" @save="edit"></NoteDetails>
         
 
@@ -36,7 +36,7 @@ export default {
     }
   },
   methods: {
-    duplicate() {},
+    share() {},
     remove() {
       this.$emit('updateNote', this.note.id)
     },
@@ -64,8 +64,6 @@ export default {
     },
 
     toggleDetails() {
-      console.log('details')
-
       this.showDetails = !this.showDetails
     },
 
