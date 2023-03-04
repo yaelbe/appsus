@@ -36,7 +36,10 @@ export default {
     }
   },
   methods: {
-    share() {},
+    share() {
+      const noteJson = JSON.stringify(this.note)
+      this.$router.push({ name: 'mail', query: { noteJson } })
+    },
     remove() {
       this.$emit('updateNote', this.note.id)
     },
