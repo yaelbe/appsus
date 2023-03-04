@@ -10,11 +10,10 @@ export default {
   props: ['info'],
   template: `
       <section class="note-info">
-          <p>from: {{info.from}}</p>
-          <p> to: {{info.to}}</p>
-          <h3>{{info.subject}}</h3>
-          <p>{{info.body}}</p>כ
-
+        <section class="note-info">
+            <div class="title">{{info.txt}} <i class="fa-solid fa-envelope"></i></div>
+            <div v-if="info.subtxt" class="subtitle">{{info.subtxt}}</div>
+        </section>
       </section>
     `,
 

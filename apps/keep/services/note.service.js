@@ -11,6 +11,7 @@ export const noteService = {
   remove,
   //   put,
   save,
+  convertMail,
 }
 
 function query() {
@@ -27,6 +28,18 @@ function save(note) {
 
 function remove(nodeId) {
   return storageService.remove(KEEP_KEY, nodeId).catch((err) => console.log('error REMOVE', err))
+}
+function convertMail(mail) {
+  const mailNote = {
+    info: {},
+    isPinned: false,
+    style: { backgroundColor: '#fff' },
+  }
+  mailNote.info.txt = mail.subject
+  mailNote.info.subtxt = mail.body
+  mailNote.info.mailId = mail.id
+  mailNote.type = 'MailNote'
+  return mailNote
 }
 
 function __createNotes() {
