@@ -19,6 +19,7 @@ export const mailService = {
   remove,
   loggedinUser,
   update,
+  createMailFromNote,
 };
 
 function query(filterBy = {}) {
@@ -64,4 +65,18 @@ function _save(Key, item) {
 
 function update(mail) {
   return storageService.put(MAIL_KEY, mail);
+}
+
+function createMailFromNote(note) {
+  console.log(note);
+  console.log("Create Mail From Note");
+  const mail = getEmptyMail();
+  mail.id = note.id;
+  mail.subject = note.info.txt;
+  mail.body = note.info.subtxt || note.info.imgUrl || note.info.vidoeUrl;
+  mail.sentAt = Date.now();
+  mail.to = loggedinUser.email;
+  mail.from = null;
+  console.log(mail);
+  return storageService.post(MAIL_KEY, mail);
 }

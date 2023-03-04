@@ -39,8 +39,14 @@
     "info": {
       "txt": "Get my stuff together",
       "tasks": [
-        { "txt": "Sprint work", "doneAt": null },
-        { "txt": "Return to Shein", "doneAt": 187111111 }
+        {
+          "txt": "Sprint work",
+          "doneAt": null
+        },
+        {
+          "txt": "Return to Shein",
+          "doneAt": 187111111
+        }
       ]
     },
     "style": {
@@ -53,9 +59,18 @@
     "info": {
       "txt": "House missions",
       "tasks": [
-        { "txt": "Wash the car", "doneAt": null },
-        { "txt": "Fix the sink", "doneAt": null },
-        { "txt": "Call Michael P.", "doneAt": null }
+        {
+          "txt": "Wash the car",
+          "doneAt": null
+        },
+        {
+          "txt": "Fix the sink",
+          "doneAt": null
+        },
+        {
+          "txt": "Call Michael P.",
+          "doneAt": null
+        }
       ]
     },
     "style": {
@@ -102,10 +117,22 @@
     "info": {
       "txt": "Grocery List",
       "tasks": [
-        { "txt": "Milk", "doneAt": null },
-        { "txt": "Bread", "doneAt": null },
-        { "txt": "Yogurt", "doneAt": null },
-        { "txt": "Chocolate", "doneAt": null }
+        {
+          "txt": "Milk",
+          "doneAt": null
+        },
+        {
+          "txt": "Bread",
+          "doneAt": null
+        },
+        {
+          "txt": "Yogurt",
+          "doneAt": null
+        },
+        {
+          "txt": "Chocolate",
+          "doneAt": null
+        }
       ]
     },
     "style": {

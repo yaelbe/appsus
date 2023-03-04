@@ -12,7 +12,6 @@ export default {
     return {
       filterBy: {
         subject: "",
-        isStar: null,
       },
     };
   },

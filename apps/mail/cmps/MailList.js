@@ -6,7 +6,7 @@ export default {
   props: ["mails"],
   template: `
   <ul class="main-list">
-     <li @click="handleDetails(mail.id)" v-for="mail in mails" :key="mail.id" class="mail-list">
+     <li @click="handleDetails(mail)" v-for="mail in mails" :key="mail.id" class="mail-list">
        <MailPreview :mail="mail" @remove="remove"/>
      </li>  
   </ul>
@@ -16,9 +16,11 @@ export default {
     return {};
   },
   methods: {
-    handleDetails(mailId) {
-      if (!mailId) return;
-      router.push(`/mail/${mailId}`);
+    handleDetails(mail) {
+      if (!mail) return;
+      mail.isRead = true;
+      mailService.update(mail);
+      router.push(`/mail/${mail.id}`);
     },
     remove(mail) {
       this.$emit("remove", mail);
