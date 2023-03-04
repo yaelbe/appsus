@@ -20,8 +20,8 @@ export default {
       if (!mailId) return;
       router.push(`/mail/${mailId}`);
     },
-    remove(mailId) {
-      this.$emit("remove", mailId);
+    remove(mail) {
+      this.$emit("remove", mail);
     },
   },
   computed: {},

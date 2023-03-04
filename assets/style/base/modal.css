@@ -6,9 +6,9 @@
   height: 350px;
 
   position: fixed;
-  top: 52%;
+  top: 0%;
   left: 0%;
-  /* transform: translate(-50%, -50%); */
+  transform: translate(50%, 50%);
   z-index: 2;
   border: 1px solid #666;
   border-radius: 10px;

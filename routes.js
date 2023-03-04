@@ -21,8 +21,8 @@ const routerOptions = {
       path: "/mail/:mailId",
       component: MailDetails,
     },
-    { path: "/keep", component: NoteIndex },
-    { path: "/mail", component: MailIndex },
+    { path: "/mail", component: MailIndex, name: "mail", props: true },
+    { path: "/keep", component: NoteIndex, name: "keep", props: true },
   ],
 };
 

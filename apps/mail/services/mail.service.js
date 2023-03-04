@@ -18,6 +18,7 @@ export const mailService = {
   save,
   remove,
   loggedinUser,
+  update,
 };
 
 function query(filterBy = {}) {
@@ -49,9 +50,9 @@ function getEmptyMail() {
     subject: "",
     body: "",
     isRead: false,
-    sendAt: null,
+    sentAt: null,
     removedAt: null,
-    from: "",
+    from: "user@appsus.com",
     to: "",
     isStar: false,
   };
@@ -59,4 +60,8 @@ function getEmptyMail() {
 
 function _save(Key, item) {
   utilService.saveToStorage(Key, item);
+}
+
+function update(mail) {
+  return storageService.put(MAIL_KEY, mail);
 }
