@@ -134,6 +134,7 @@ export default {
     },
   },
   created() {
+    console.log("route", this.$route.query.noteJson);
     this.onload();
   },
   components: {

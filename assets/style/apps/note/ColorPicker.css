@@ -17,6 +17,11 @@
   overflow: scroll;
 }
 
+.colors.details {
+  position: inherit;
+  transform: translate(50%, -100%);
+  height: fit-content;
+}
 /* .colors.open {
   opacity: 1;
   pointer-events: all;
