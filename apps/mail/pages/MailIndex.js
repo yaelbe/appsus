@@ -134,7 +134,10 @@ export default {
     },
   },
   created() {
-    console.log("route", this.$route.query.noteJson);
+    if (this.$route.query.noteJson) {
+      const noteForMail = JSON.parse(this.$route.query.noteJson);
+      return mailService.createMailFromNote(noteForMail).then(this.onload);
+    }
     this.onload();
   },
   components: {
