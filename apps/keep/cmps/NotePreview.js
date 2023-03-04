@@ -22,7 +22,7 @@ export default {
         </section>
 
         <ColorPicker v-show="colorPalletOpen" @color="updateColor" :style="{width: cardWidth}"></ColorPicker>
-        <NoteDetails v-if="showDetails" :note="note" @cancel="showDetails = !showDetails"></NoteDetails>
+        <NoteDetails v-if="showDetails" :note="note" @save="edit"></NoteDetails>
         
 
 
@@ -44,7 +44,11 @@ export default {
       this.note.isPinned = !this.note.isPinned
       this.$emit('updateNote', JSON.parse(JSON.stringify(this.note)))
     },
-    edit() {},
+    edit(note) {
+      this.showDetails = false
+      this.updateNote(note)
+      this.$emit('updateNote', JSON.parse(JSON.stringify(this.note)))
+    },
     updateColor(color) {
       this.colorPalletOpen = !this.colorPalletOpen
       if (color === 'close') return
@@ -64,16 +68,24 @@ export default {
 
       this.showDetails = !this.showDetails
     },
+
+    updateNote(note) {
+      if (this.note.info && note) {
+        this.note.info = { ...note.info }
+      }
+      // this.note.style.backgroundColor = note.style.backgroundColor
+    },
   },
   computed: {
     background() {
-      return { backgroundColor: this.note.style.backgroundColor }
+      if (this.note.style) {
+        return { backgroundColor: this.note.style.backgroundColor }
+      }
     },
   },
 
   watch: {
     colorOwner(newVal) {
-      console.log('new color owner', newVal)
       if (this.note.id !== newVal) {
         this.colorPalletOpen = false
       }

@@ -25,5 +25,10 @@ export default {
   computed: {},
   created() {},
   components: {},
+  info(newVal) {
+    if (!newVal) return
+    this.txt = newVal.txt
+    this.subtxt = newVal.subtxt
+  },
   emits: [],
 }

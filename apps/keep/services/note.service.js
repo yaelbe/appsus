@@ -19,14 +19,14 @@ function query() {
 
 function save(note) {
   if (note.id) {
-    return storageService.put(KEEP_KEY, note)
+    return storageService.put(KEEP_KEY, note).catch((err) => console.log('error PUT', err))
   }
   note.id = utilService.makeId()
-  return storageService.post(KEEP_KEY, note, false)
+  return storageService.post(KEEP_KEY, note, false).catch((err) => console.log('error POST', err))
 }
 
 function remove(nodeId) {
-  return storageService.remove(KEEP_KEY, nodeId)
+  return storageService.remove(KEEP_KEY, nodeId).catch((err) => console.log('error REMOVE', err))
 }
 
 function __createNotes() {

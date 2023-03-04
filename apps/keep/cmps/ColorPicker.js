@@ -14,7 +14,7 @@ export default {
             <button class="clr10 btn" :class="{checked: isActive === '#e6c9a8'}" @click="choose('#e6c9a8')"></button>
             <button class="clr11 btn" :class="{checked: isActive === '#e8eaed'}" @click="choose('#e8eaed')"></button>
             <button class="clr12 btn" :class="{checked: isActive === '#fff'}" @click="choose('#fff')"></button>
-            <button class="close-colors" @click="choose(close)">X</button>
+            <button class="close-colors" @click="choose('close')">X</button>
         </section>
     `,
 
@@ -30,7 +30,9 @@ export default {
     },
   },
   computed: {},
-  created() {},
+  created() {
+    console.log('ColorPicker created')
+  },
   components: {},
   emits: ['color'],
 }

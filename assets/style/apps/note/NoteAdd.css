@@ -1,7 +1,17 @@
+.add-note-continuer {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: 0 var(--padding);
+}
+
+.add-note-continuer input[type='text'] {
+  background-color: transparent;
+}
+
 .add-note {
   display: flex;
   justify-content: space-between;
-  margin: 0 var(--padding);
 }
 
 .add-note input[type='text'] {
@@ -35,3 +45,12 @@
 .add-video input[type='url'] {
   flex-grow: 1;
 }
+
+/* .bottom-input {
+  opacity: 1;
+  transition: 0.3s;
+}
+.add-note input[type='text']:focus .bottom-input {
+  background-color: aqua;
+  opacity: 1;
+} */

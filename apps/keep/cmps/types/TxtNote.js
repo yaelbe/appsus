@@ -3,6 +3,7 @@ export default {
   template: `
     <section class="note-info">
     <div class="title">{{info.txt}}</div>
+    <div v-if="info.subtxt" class="subtitle">{{info.subtxt}}</div>
     </section>
   `,
 
@@ -13,5 +14,10 @@ export default {
   computed: {},
   created() {},
   components: {},
+  info(newVal) {
+    if (!newVal) return
+    this.txt = newVal.txt
+    this.subtxt = newVal.subtxt
+  },
   emits: [],
 }

@@ -11,6 +11,7 @@
   object-fit: cover;
   background-size: cover;
   background-position: center center;
+  background-repeat: no-repeat;
   position: relative;
   /* padding-top: percentage(image-height($url) / image-width($url)); */
 }
@@ -32,22 +33,18 @@
   display: flex;
   flex-direction: column;
   justify-content: end;
-  align-items: baseline;
   padding-inline-start: 1em;
 }
 
-input[type='checkbox'] p {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
+input[type='checkbox'] {
+  min-height: 30px;
+  width: fit-content;
 }
 
 .task-list ul li input[type='checkbox'] {
   min-width: 30px;
 }
 .task-list ul li {
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  max-width: 90%;
+  white-space: normal;
+  overflow-wrap: anywhere;
 }
