@@ -36,6 +36,11 @@
   border-radius: 10em;
   border: 1px solid #7c7c7c;
 }
+.close-colors {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+}
 
 .clr1 {
   background-color: #f28b82;

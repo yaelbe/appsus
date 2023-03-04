@@ -29,6 +29,11 @@ a {
   color: unset;
 }
 
+#container > * {
+  text-align: start;
+  unicode-bidi: plaintext;
+}
+
 /* Dont stretch my Media */
 img,
 embed,

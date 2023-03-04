@@ -2,10 +2,11 @@ export default {
   props: ['info'],
   template: `
     <section class="note-info">
-        <h3>{{info.title}}</h3>
         <audio controls>
-            <source :src="info.url"/>
+            <source :src="info.audioUrl"/>
         </audio>
+        <div class="title">{{info.txt}}</div>
+        <div v-if="info.subtxt" class="subtitle">{{info.subtxt}}</div>
     </section>
     `,
   created() {},
@@ -14,4 +15,10 @@ export default {
   },
   methods: {},
   computed: {},
+  info(newVal) {
+    if (!newVal) return
+    this.txt = newVal.txt
+    this.audioUrl = newVal.audioUrl
+    this.subtxt = newVal.subtxt
+  },
 }

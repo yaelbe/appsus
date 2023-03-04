@@ -1,0 +1,50 @@
+.details {
+  width: 100%;
+  height: 100%;
+}
+
+.imgDiv {
+  width: 100%;
+  height: 60%;
+  background-color: transparent;
+  background-repeat: no-repeat;
+  object-fit: cover;
+  background-size: cover;
+  background-position: center center;
+  background-repeat: no-repeat;
+  position: relative;
+  /* padding-top: percentage(image-height($url) / image-width($url)); */
+}
+
+.details .divEdit {
+  width: 100%;
+  height: 15%;
+  min-height: 80px;
+  background-color: transparent;
+  overflow: scroll;
+}
+
+.details input {
+  width: 100%;
+  background-color: transparent;
+}
+
+.task-list ul {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding-inline-start: 1em;
+}
+
+input[type='checkbox'] {
+  min-height: 30px;
+  width: fit-content;
+}
+
+.task-list ul li input[type='checkbox'] {
+  min-width: 30px;
+}
+.task-list ul li {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}

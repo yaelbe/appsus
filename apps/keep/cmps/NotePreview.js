@@ -6,12 +6,13 @@ import TxtNote from './types/TxtNote.js'
 import VideoNote from './types/VideoNote.js'
 
 import ColorPicker from './ColorPicker.js'
+import NoteDetails from './NoteDetails.js'
 
 export default {
   props: ['note', 'colorOwner'],
   template: `
     <article v-if="note" class="note-preview" :style="background" ref="noteCard">
-        <component :is="note.type" :info="note.info"/>
+        <component :is="note.type" :info="note.info" @click="toggleDetails"/>
 
         <section class="options">
             <button class="options-btn" @click.prevent="duplicate" stitle="Make a copy"><i class="fa-solid fa-copy"></i></button>
@@ -21,6 +22,9 @@ export default {
         </section>
 
         <ColorPicker v-show="colorPalletOpen" @color="updateColor" :style="{width: cardWidth}"></ColorPicker>
+        <NoteDetails v-if="showDetails" :note="note" @save="edit"></NoteDetails>
+        
+
 
     </article>
     `,
@@ -28,6 +32,7 @@ export default {
     return {
       colorPalletOpen: false,
       cardWidth: null,
+      showDetails: false,
     }
   },
   methods: {
@@ -39,9 +44,14 @@ export default {
       this.note.isPinned = !this.note.isPinned
       this.$emit('updateNote', JSON.parse(JSON.stringify(this.note)))
     },
-    edit() {},
+    edit(note) {
+      this.showDetails = false
+      this.updateNote(note)
+      this.$emit('updateNote', JSON.parse(JSON.stringify(this.note)))
+    },
     updateColor(color) {
       this.colorPalletOpen = !this.colorPalletOpen
+      if (color === 'close') return
       this.note.style.backgroundColor = color
       this.$emit('updateNote', JSON.parse(JSON.stringify(this.note)))
     },
@@ -52,16 +62,30 @@ export default {
       console.log('openColorPicker', this.note.id)
       this.$emit('colorOwnerChanged', this.note.id)
     },
+
+    toggleDetails() {
+      console.log('details')
+
+      this.showDetails = !this.showDetails
+    },
+
+    updateNote(note) {
+      if (this.note.info && note) {
+        this.note.info = { ...note.info }
+      }
+      // this.note.style.backgroundColor = note.style.backgroundColor
+    },
   },
   computed: {
     background() {
-      return { backgroundColor: this.note.style.backgroundColor }
+      if (this.note.style) {
+        return { backgroundColor: this.note.style.backgroundColor }
+      }
     },
   },
 
   watch: {
     colorOwner(newVal) {
-      console.log('new color owner', newVal)
       if (this.note.id !== newVal) {
         this.colorPalletOpen = false
       }
@@ -75,5 +99,6 @@ export default {
     VideoNote,
     AudioNote,
     ColorPicker,
+    NoteDetails,
   },
 }

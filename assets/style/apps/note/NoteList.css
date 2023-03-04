@@ -1,7 +1,50 @@
 .note-list {
-  column-count: auto;
   height: 100%;
   width: 100%;
-  column-width: var(--colWidth);
+  column-fill: auto;
+  columns: auto 220px;
+
   padding: var(--padding);
+  break-inside: avoid;
 }
+@media (max-width: 1300px) {
+  .note-list {
+    columns: auto 180px;
+  }
+}
+
+@media (max-width: 1000px) {
+  .note-list {
+    columns: auto 150px;
+  }
+}
+
+@media (max-width: 800px) {
+  .note-list {
+    columns: auto 120px;
+  }
+}
+
+@media (max-width: 600px) {
+  .note-list {
+    columns: auto 100px;
+  }
+}
+
+/* @media (max-width: 400px) {
+  .note-list {
+    columns: 1 200px;
+  }
+} */
+
+/* @media (max-width: 800px) {
+  .note-list {
+    columns: auto 180px;
+  }
+}
+
+@media (min-width: 800px) {
+  .note-list {
+    columns: auto 220px;
+  }
+} */
