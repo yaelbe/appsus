@@ -15,7 +15,7 @@ export default {
         <component :is="note.type" :info="note.info" @click="toggleDetails"/>
 
         <section class="options">
-            <button class="options-btn" @click.prevent="share" stitle="Share to mail"><i class="fa-solid fa-copy"></i></button>
+            <button class="options-btn" @click.prevent="share" stitle="Share to mail"><i class="fa-solid fa-arrow-up-from-bracket"></i></button>
             <button class="options-btn" @click.prevent="remove" title="Delete"><i class="fa-solid fa-trash"></i></button>
             <button class="options-btn" @click.prevent="openColorPicker($event)" title="Change color" :key="Date.now()"><i class="fa-solid fa-palette"></i></button>
             <button class="options-btn" @click.prevent="pin" title="Pin"><i class="fa-solid fa-thumbtack"></i></button>
