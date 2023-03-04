@@ -59,3 +59,8 @@ ul {
   margin: 0;
   list-style-type: none;
 }
+
+input[type='text'] {
+  font-family: main;
+  font-size: 1em;
+}

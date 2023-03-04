@@ -49,16 +49,17 @@ export default {
       this.$emit('updateNote', JSON.parse(JSON.stringify(this.note)))
     },
     edit(note) {
-      this.showDetails = false
+      // this.showDetails = false
       this.updateNote(note)
       this.$emit('updateNote', JSON.parse(JSON.stringify(this.note)))
     },
     updateColor(color) {
-      this.colorPalletOpen = !this.colorPalletOpen
+      this.colorPalletOpen = false
       if (color === 'close') return
       this.note.style.backgroundColor = color
       this.$emit('updateNote', JSON.parse(JSON.stringify(this.note)))
     },
+
     openColorPicker(ev) {
       const width = this.$refs.noteCard.offsetWidth
       this.cardWidth = width + 'px'
@@ -75,6 +76,14 @@ export default {
       if (this.note.info && note) {
         this.note.info = { ...note.info }
       }
+      if (this.note.style && note) {
+        this.note.style = { ...note.style }
+      }
+
+      if (note) {
+        this.note.isPinned = note.isPinned
+      }
+
       // this.note.style.backgroundColor = note.style.backgroundColor
     },
   },

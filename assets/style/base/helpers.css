@@ -41,6 +41,15 @@
   margin: 1em;
 }
 
+.appThemBtn {
+  background-color: var(--clr5);
+  color: var(--clr1);
+}
+
+.appThemTitle {
+  color: var(--clr5);
+}
+
 /* list helpers */
 
 .clean-list {

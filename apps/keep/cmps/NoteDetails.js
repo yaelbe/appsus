@@ -27,12 +27,13 @@ export default {
         </form>
         <div class="details-footer flex">
             <section class="options show">
+               <button class="options-btn" @click.stop="shareNote" stitle="Share to mail"><i class="fa-solid fa-arrow-up-from-bracket"></i></button>
                 <!-- <button class="options-btn" @click.stop="remove" title="Delete"><i class="fa-solid fa-trash"></i></button> -->
-                <button class="options-btn" @click.prevent="openColorPicker($event)" title="Change color" :key="Date.now()"><i class="fa-solid fa-palette"></i></button>
-                <!-- <button class="options-btn" @click.stop="pin" title="Pin"><i class="fa-solid fa-thumbtack"></i></button> -->
+                <button class="options-btn" @click.stop="openColorPicker($event)" title="Change color" :key="Date.now()"><i class="fa-solid fa-palette"></i></button>
+                <button class="options-btn" @click.stop="pinNote" title="Pin"><i class="fa-solid fa-thumbtack"></i></button>
             </section>
-            <button @click.prevent="cancel" class="type-btn">Cancel</button>
-            <button @click.prevent="save" class="type-btn">Create</button>
+            <button @click.prevent="cancel" class="type-btn fa-solid fa-xmark"></button>
+            <button @click.prevent="save" class="type-btn fa-solid fa-plus"></button>
         </div>
         
         <ColorPicker v-if="colorPalletOpen" @color="updateColor" :style="{width: '300px'}" :position="position"></ColorPicker>
@@ -42,7 +43,7 @@ export default {
 
     
   `,
-  // translate: 0% -150%;
+
   data() {
     return {
       width: '300px',
@@ -50,12 +51,6 @@ export default {
       updateNote: JSON.parse(JSON.stringify(this.note)),
       position: 'details',
     }
-  },
-  methods: {
-    duplicate() {},
-    remove() {},
-    openColorPicker(ev) {},
-    pin() {},
   },
   computed: {
     direction() {
@@ -102,10 +97,20 @@ export default {
       this.colorPalletOpen = true
     },
     updateColor(color) {
+      this.colorPalletOpen = false
       if (color === 'close') {
-        this.colorPalletOpen = false
+        return
       }
-      console.log('color', color)
+      this.updateNote.style.backgroundColor = color
+      this.$emit('save', JSON.parse(JSON.stringify(this.updateNote)))
+    },
+    pinNote() {
+      this.updateNote.isPinned = !this.updateNote.isPinned
+      this.$emit('save', JSON.parse(JSON.stringify(this.updateNote)))
+    },
+    shareNote() {
+      const noteJson = JSON.stringify(this.note)
+      this.$router.push({ name: 'mail', query: { noteJson } })
     },
   },
   components: { ColorPicker },

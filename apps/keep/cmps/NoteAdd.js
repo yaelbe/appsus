@@ -8,14 +8,14 @@ export default {
     <form  ref="mainContinuer" class="add-note-continuer" :style="{backgroundColor: bgColor}">
       <div class="top-input add-note">
         <input type="text" ref="mainInput" dir=auto v-model="note.info.txt"  @focus="showExtendedInput = true"  class="note-txt title" placeholder="What's on your mind..." />
-          <nav class="add-type">
-              <button class="type-btn" @click.prevent="txtNote"><i class="fa-regular fa-comment"></i></button>
-              <button class="choose-file type-btn"><i class="fa-regular fa-image"></i>
+          <nav class="add-type flex">
+              <button class="type-btn" @click.prevent="txtNote" title="Just a text note"><i class="fa-regular fa-comment"></i></button>
+              <button class="choose-file type-btn" title="Upload image"><i class="fa-regular fa-image"></i>
                   <input name="img" type="file" accept="image/*" @change="uploadImage($event)" />
               </button>
-              <button class="type-btn" @click.prevent="urlImgNote"><i class="fa-solid fa-globe"></i></button>
-              <button class="type-btn" @click.prevent="videoNote"><i class="fa-brands fa-youtube"></i></button>
-              <button class="type-btn" @click.prevent="ListNote"><i class="fa-solid fa-list"></i></button>
+              <button class="type-btn" @click.prevent="urlImgNote" title="Use image link"><i class="fa-solid fa-globe"></i></button>
+              <button class="type-btn" @click.prevent="videoNote" title="Use YouTube link"><i class="fa-brands fa-youtube"></i></button>
+              <button class="type-btn" @click.prevent="ListNote" title="List note"><i class="fa-solid fa-list"></i></button>
           </nav>
         </div>
 
@@ -34,29 +34,29 @@ export default {
         </div>
     </form>
     <form v-if="addLink" class="youtube-link add-video centerModal" @submit.prevent="addYoutube">
-        <h3>Please enter Youtube link</h3>
+        <h3 class="appThemTitle">Please enter Youtube link</h3>
         <div class="flex">
             <input type="url" v-model="note.info.videoUrl"  class="note-txt" placeholder="Link here" />
-            <button type="submit"><i class="fa-solid fa-play"></i></button>
+            <button type="submit" class="appThemBtn"><i class="fa-solid fa-play"></i></button>
         </div>
     </form>
     <form v-if="showUrl" class="add-video centerModal" @submit.prevent="imgUrlNote">
-        <h3>Please enter image link</h3>
+        <h3 class="appThemTitle">Please enter image link</h3>
         <div class="flex">
             <input type="url" v-model="note.info.imgUrl"  class="note-txt" placeholder="Link here" />
-            <button type="submit"><i class="fa-solid fa-play"></i></button>
+            <button type="submit" class="appThemBtn"><i class="fa-solid fa-play"></i></button>
         </div>
     </form>
     <form v-if="showList" class="add-video centerModal" @submit.prevent="addList($event)">
        <header class="flex">
             <input type="text" dir=auto v-model="note.info.txt"  class="note-txt grow" placeholder="List Name" />
-            <button @click.prevent="addTask" title="Add Task">+</button>
+            <button @click.prevent="addTask" class="type-btn" title="Add Task">+</button>
         </header>
             <div ref="tasks" class="flex flex-column ">
                 <input type="text" dir=auto class="grow" name="task" placeholder="Task" />
             </div>
             
-            <button type="submit">Add Note<i class="fa-regular fa-note-sticky"></i></button>
+            <button type="submit" class="type-btn">Add Note<i class="fa-regular fa-note-sticky"></i></button>
     </form>
     <NoteDetails v-if="showDetails" :note="note" @save="save"></NoteDetails>
 

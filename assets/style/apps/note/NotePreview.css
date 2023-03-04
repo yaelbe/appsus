@@ -102,10 +102,16 @@ input[type='checkbox'] {
   justify-content: flex-start;
   position: relative;
 }
+.type-btn {
+  color: var(--clr1);
+  background-color: var(--clr5);
+}
 .type-btn.create-note {
   border: none;
+  background-color: var(--clr5);
   border-bottom: 1px solid var(--txt);
   border-right: 1px solid var(--txt);
+  color: var(--clr1);
 }
 
 .add-note-continuer .note-txt.sub-txt {
