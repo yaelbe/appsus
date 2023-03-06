@@ -5,11 +5,11 @@
   padding: 10px;
   box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 2px 6px 2px rgb(60 64 67 / 15%);
   position: absolute;
-  bottom: -50px;
-  right: 50%;
+  bottom: -85px;
+  /* right: 50%; */
   z-index: 1;
   /* transform: translate(0%, 50%); */
-  transform: translate(50%, 50%);
+  /* transform: translate(50%, 50%); */
   gap: 5px;
   border-radius: 10px;
   opacity: 1;
@@ -19,7 +19,7 @@
 
 .colors.details {
   position: inherit;
-  transform: translate(50%, -100%);
+  transform: translate(0, -200%);
   height: fit-content;
 }
 /* .colors.open {
