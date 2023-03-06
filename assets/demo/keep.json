@@ -92,7 +92,7 @@
     "id": "n107",
     "type": "ImgNote",
     "info": {
-      "imgUrl": "/assets/img/bike.jpeg",
+      "imgUrl": "./assets/img/bike.jpeg",
       "txt": "My Bike"
     },
     "style": {
