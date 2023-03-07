@@ -18,8 +18,8 @@
 }
 
 .colors.details {
-  position: inherit;
-  transform: translate(0, -200%);
+  position: absolute;
+  /* transform: translate(0, -200%); */
   height: fit-content;
 }
 /* .colors.open {
