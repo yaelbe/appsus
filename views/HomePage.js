@@ -10,7 +10,7 @@ export default {
             <span id="c">Dead</span>
         </h1>
     </div>
-    <img class="logo" src="./../assets/img/logo.png" alt="">
+    <img class="logo" src="/../assets/img/logo.png" alt="">
     <section class="btns">
         <button class="home-btn" @click="navigate('mail')">Check Your Mails</button>
         <button class="home-btn" @click="navigate('keep')" >Check Your Notes</button>

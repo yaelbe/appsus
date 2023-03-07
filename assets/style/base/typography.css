@@ -16,12 +16,12 @@
 
 @font-face {
   font-family: imp;
-  src: url(/assets/fonts/impact/impact.ttf);
+  src: url(../../fonts/impact/impact.ttf);
 }
 
 @font-face {
   font-family: main;
-  src: url(/assets/fonts/montserrat/Montserrat-Regular.ttf);
+  src: url(../../fonts/montserrat/Montserrat-Regular.ttf);
 }
 
 @font-face {
